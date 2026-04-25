@@ -129,7 +129,7 @@ export default function HomePage() {
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
               <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: "url('/images/corte-citadelle.svg')" }}
+                style={{ backgroundImage: "url('/images/corte-citadelle.png')" }}
                 role="img"
                 aria-label="Citadelle de Corte en Corse — découvrir la région pour vos vacances mobil home"
               />

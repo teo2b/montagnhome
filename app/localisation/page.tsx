@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/localisation`,
     images: [
       {
-        url: "/images/corte-citadelle.svg",
+        url: "/images/corte-citadelle.png",
         width: 1200,
         height: 630,
         alt: "Vue de Corte et sa citadelle en Corse — location mobil home",
@@ -69,7 +69,7 @@ export default function LocalisationPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/40 z-10" />
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/corte-panorama.svg')" }}
+          style={{ backgroundImage: "url('/images/corte-panorama.png')" }}
           role="img"
           aria-label="Vue panoramique de Corte en Corse — découvrir la région pour location mobil home"
         />

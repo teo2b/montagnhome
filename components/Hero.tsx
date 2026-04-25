@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 z-10" />
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/hero-corse.svg')" }}
+        style={{ backgroundImage: "url('/images/hero-corse.png')" }}
         role="img"
         aria-label="Vue panoramique des montagnes corses près de Corte — location mobil home Corse"
       />
