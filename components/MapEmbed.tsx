@@ -3,7 +3,7 @@ interface MapEmbedProps {
   title?: string;
 }
 
-export default function MapEmbed({ src, title = "Carte Google Maps — 865 route d'Aleria, Corte, Corse" }: MapEmbedProps) {
+export default function MapEmbed({ src, title = "Carte Google Maps — Corte, Corse" }: MapEmbedProps) {
   return (
     <div className="rounded-2xl overflow-hidden shadow-lg">
       <iframe

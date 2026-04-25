@@ -191,5 +191,5 @@ Au-delà de la nature, la gastronomie corse est un autre trésor à découvrir. 
 
 En séjournant dans nos mobil homes à Corte, vous bénéficiez d'un emplacement stratégique pour explorer toute la Corse : la côte orientale et ses plages sont à moins d'une heure, Ajaccio et Bastia sont facilement accessibles, et les plus beaux villages de montagne sont à portée de main.`,
   mapEmbedUrl:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1500!2d9.155!3d42.298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12da2985e7d7c92f%3A0x4f9b7c5c8a8c0d0e!2s865%20Rte%20d&#39;Al%C3%A9ria%2C%2020250%20Corte!5e0!3m2!1sfr!2sfr",
+    "https://maps.google.com/maps?q=865+route+d%27Aleria+20250+Corte+France&t=&z=15&ie=UTF8&iwloc=&output=embed",
 };
