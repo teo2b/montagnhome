@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SITE_NAME, CONTACT_EMAIL } from "@/lib/data";
+import { SITE_NAME, CONTACT_EMAIL, ADDRESS } from "@/lib/data";
 
 export default function Footer() {
   return (
@@ -11,33 +11,20 @@ export default function Footer() {
               {SITE_NAME}
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-gray-400">
-              Location de mobil homes en Corse, à Corte. Vivez des vacances authentiques au cœur des montagnes corses.
+              Location de mobil homes à Corte, en Corse. Vivez des vacances authentiques au cœur des montagnes corses.
             </p>
           </div>
 
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
-              Nos hébergements
+              Navigation
             </h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/mobil-home-1" className="text-sm hover:text-white transition-colors">
-                  Le Panorama — 6 pers.
+                <Link href="/nos-mobil-homes" className="text-sm hover:text-white transition-colors">
+                  Nos Mobil Homes
                 </Link>
               </li>
-              <li>
-                <Link href="/mobil-home-2" className="text-sm hover:text-white transition-colors">
-                  Le Maquis — 4 pers.
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
-              Informations
-            </h3>
-            <ul className="space-y-2">
               <li>
                 <Link href="/localisation" className="text-sm hover:text-white transition-colors">
                   Localisation & activités
@@ -53,11 +40,24 @@ export default function Footer() {
 
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
+              Infos pratiques
+            </h3>
+            <ul className="space-y-2">
+              <li className="text-sm">2 mobil homes · 4 pers.</li>
+              <li className="text-sm">2 chambres · 30 m²</li>
+              <li className="text-sm">Arrivée 18h – 20h</li>
+              <li className="text-sm">Départ 05h – 10h</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
               Contact
             </h3>
             <ul className="space-y-2">
               <li className="text-sm">{CONTACT_EMAIL}</li>
-              <li className="text-sm">Corte, Haute-Corse, France</li>
+              <li className="text-sm">{ADDRESS.street}</li>
+              <li className="text-sm">{ADDRESS.postalCode} {ADDRESS.city}, {ADDRESS.region}</li>
             </ul>
           </div>
         </div>

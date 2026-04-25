@@ -10,13 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${SITE_URL}/mobil-home-1`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/mobil-home-2`,
+      url: `${SITE_URL}/nos-mobil-homes`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,

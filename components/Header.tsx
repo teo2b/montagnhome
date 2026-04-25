@@ -6,8 +6,7 @@ import { SITE_NAME } from "@/lib/data";
 
 const navLinks = [
   { href: "/", label: "Accueil" },
-  { href: "/mobil-home-1", label: "Le Panorama" },
-  { href: "/mobil-home-2", label: "Le Maquis" },
+  { href: "/nos-mobil-homes", label: "Nos Mobil Homes" },
   { href: "/localisation", label: "Localisation" },
   { href: "/contact", label: "Contact" },
 ];
@@ -39,7 +38,7 @@ export default function Header() {
 
           <div className="hidden md:flex items-center gap-3">
             <Link
-              href="/contact"
+              href="/nos-mobil-homes"
               className="rounded-xl bg-brand-green px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-green-light transition-colors"
             >
               Réserver
@@ -80,7 +79,7 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href="/contact"
+              href="/nos-mobil-homes"
               onClick={() => setMobileOpen(false)}
               className="mt-2 rounded-xl bg-brand-green px-5 py-3 text-center text-sm font-semibold text-white hover:bg-brand-green-light transition-colors"
             >

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import MapEmbed from "@/components/MapEmbed";
 import JsonLd from "@/components/JsonLd";
-import { locationContent, activities, mobileHomes, SITE_URL } from "@/lib/data";
+import { locationContent, activities, SITE_URL, BOOKING_URL } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: locationContent.seoTitle,
@@ -156,15 +156,20 @@ export default function LocalisationPage() {
             Réservez votre mobil home à Corte et profitez de tout ce que la région a à offrir.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            {mobileHomes.map((mh) => (
-              <Link
-                key={mh.slug}
-                href={`/${mh.slug}`}
-                className="w-full sm:w-auto rounded-xl bg-white px-8 py-4 text-base font-semibold text-brand-green hover:bg-brand-beige transition-colors"
-              >
-                {mh.name} — {mh.capacity} pers.
-              </Link>
-            ))}
+            <Link
+              href="/nos-mobil-homes"
+              className="w-full sm:w-auto rounded-xl bg-white px-8 py-4 text-base font-semibold text-brand-green hover:bg-brand-beige transition-colors"
+            >
+              Voir nos mobil homes
+            </Link>
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto rounded-xl bg-white/20 border border-white px-8 py-4 text-base font-semibold text-white hover:bg-white/30 transition-colors"
+            >
+              Réserver sur Booking
+            </a>
           </div>
         </div>
       </section>

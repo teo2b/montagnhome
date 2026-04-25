@@ -25,7 +25,7 @@ export default function TestimonialsSection() {
           Ce que disent nos voyageurs
         </h2>
         <p className="mt-4 text-center text-gray-600">
-          Des avis authentiques de nos clients satisfaits.
+          Des avis de clients qui ont séjourné chez Muntagn&apos;home.
         </p>
 
         <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -38,13 +38,9 @@ export default function TestimonialsSection() {
               <blockquote className="mt-4 text-gray-700 leading-relaxed">
                 &ldquo;{t.text}&rdquo;
               </blockquote>
-              <div className="mt-6 flex items-center justify-between">
-                <div>
-                  <p className="font-semibold text-gray-900">{t.name}</p>
-                  <p className="text-xs text-gray-500">
-                    {t.mobileHome} — {t.date}
-                  </p>
-                </div>
+              <div className="mt-6">
+                <p className="font-semibold text-gray-900">{t.name}</p>
+                <p className="text-xs text-gray-500">{t.date}</p>
               </div>
             </article>
           ))}

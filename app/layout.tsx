@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Louez nos mobil homes tout confort à Corte, en Corse. Vacances nature en montagne, vue exceptionnelle, calme et authenticité. Réservez sur Airbnb ou Booking.",
+    "Louez nos 2 mobil homes tout confort à Corte, en Corse. 30m², 2 chambres, terrasse vue montagne, cuisine équipée. Réservez sur Booking.com.",
   keywords: [
     "location mobil home Corse",
     "mobil home vacances Corse",

@@ -1,4 +1,4 @@
-import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from "@/lib/data";
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL, ADDRESS, RATING } from "@/lib/data";
 
 interface JsonLdProps {
   additionalData?: Record<string, unknown>;
@@ -10,14 +10,15 @@ export default function JsonLd({ additionalData }: JsonLdProps) {
     "@type": "LodgingBusiness",
     name: SITE_NAME,
     description:
-      "Location de mobil homes de qualité à Corte, en Corse. Deux hébergements confortables au cœur des montagnes corses pour des vacances nature inoubliables.",
+      "Location de mobil homes à Corte, en Corse. Deux hébergements de 30m² tout équipés au cœur des montagnes corses avec terrasse vue montagne.",
     url: SITE_URL,
     email: CONTACT_EMAIL,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Corte",
-      addressRegion: "Corse",
-      postalCode: "20250",
+      streetAddress: ADDRESS.street,
+      addressLocality: ADDRESS.city,
+      addressRegion: ADDRESS.region,
+      postalCode: ADDRESS.postalCode,
       addressCountry: "FR",
     },
     geo: {
@@ -27,11 +28,14 @@ export default function JsonLd({ additionalData }: JsonLdProps) {
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.8",
-      bestRating: "5",
-      reviewCount: "56",
+      ratingValue: String(RATING.value),
+      bestRating: "10",
+      reviewCount: String(RATING.reviewCount),
     },
-    priceRange: "60€ - 130€ / nuit",
+    priceRange: "70€ - 110€ / nuit",
+    numberOfRooms: 2,
+    checkinTime: "18:00",
+    checkoutTime: "10:00",
     ...additionalData,
   };
 
