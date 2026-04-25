@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-green: #2D5016;
+  --color-brand-green-light: #4A7C28;
+  --color-brand-green-dark: #1E3A0E;
+  --color-brand-beige: #F5F0E8;
+  --color-brand-sand: #E8DFD0;
+  --color-brand-gold: #D4A853;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased text-gray-800 bg-white;
+  }
+}
