@@ -1,24 +1,22 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import JsonLd from "@/components/JsonLd";
-import { CONTACT_EMAIL, WHATSAPP_NUMBER, SITE_URL, SITE_NAME } from "@/lib/data";
+import { CONTACT_EMAIL, WHATSAPP_NUMBER, SITE_URL, SITE_NAME, BOOKING_URL, AIRBNB_URL } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: `Contactez-nous — ${SITE_NAME}`,
+  title: `Contactez-nous — Location Mobil-Home Corte, Corse`,
   description:
-    "Contactez Muntagn'home pour réserver votre mobil home à Corte en Corse. Réponse rapide par email ou WhatsApp. Nous sommes à votre écoute.",
+    "Contactez Muntagn'home pour toute question sur nos mobil-homes à Corte, Corse. Réponse sous 24h par email ou WhatsApp.",
   openGraph: {
     title: `Contactez-nous — ${SITE_NAME}`,
-    description: "Contactez-nous pour réserver votre séjour en mobil home à Corte, Corse.",
+    description: "Une question sur nos mobil-homes à Corte ? Contactez-nous par email ou WhatsApp.",
     url: `${SITE_URL}/contact`,
   },
-  alternates: {
-    canonical: `${SITE_URL}/contact`,
-  },
+  alternates: { canonical: `${SITE_URL}/contact` },
 };
 
 export default function ContactPage() {
-  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER.replace(/\+/g, "")}?text=${encodeURIComponent("Bonjour, je souhaiterais des informations sur vos mobil homes à Corte.")}`;
+  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER.replace(/\+/g, "")}?text=${encodeURIComponent("Bonjour, je souhaiterais des informations sur vos mobil-homes à Corte.")}`;
 
   return (
     <>
@@ -28,11 +26,10 @@ export default function ContactPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h1 className="font-serif text-4xl sm:text-5xl font-bold text-gray-900">
-              Contactez-nous
+              Une question ? Contactez-nous
             </h1>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-              Une question, une demande de disponibilité ? N&apos;hésitez pas à nous écrire.
-              Nous vous répondons sous 24h.
+              Disponibilités, arrivée tardive, conseils sur la région… Nous répondons sous 24h.
             </p>
           </div>
 
@@ -44,7 +41,6 @@ export default function ContactPage() {
             </div>
 
             <aside className="space-y-6">
-              {/* Email */}
               <div className="rounded-2xl border border-gray-200 p-6">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-beige text-brand-green">
@@ -64,7 +60,6 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* WhatsApp */}
               <a
                 href={whatsappLink}
                 target="_blank"
@@ -82,38 +77,28 @@ export default function ContactPage() {
                 </div>
               </a>
 
-              {/* Réassurance */}
               <div className="rounded-2xl bg-brand-beige p-6">
-                <h3 className="font-semibold text-gray-900 mb-4">Nos engagements</h3>
+                <h3 className="font-semibold text-gray-900 mb-3">Vous préférez réserver directement ?</h3>
                 <div className="space-y-3">
-                  <div className="flex items-center gap-2 text-sm text-gray-700">
-                    <svg className="h-4 w-4 text-green-600 shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                    Réponse sous 24h
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-700">
-                    <svg className="h-4 w-4 text-green-600 shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                    Conseils personnalisés
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-700">
-                    <svg className="h-4 w-4 text-green-600 shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                    Sans engagement
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-700">
-                    <svg className="h-4 w-4 text-green-600 shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                    Accueil chaleureux garanti
-                  </div>
+                  <a
+                    href={AIRBNB_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full rounded-xl bg-[#FF5A5F] px-5 py-3 text-center text-sm font-semibold text-white hover:bg-[#e04e52] transition-colors"
+                  >
+                    Réserver sur Airbnb
+                  </a>
+                  <a
+                    href={BOOKING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full rounded-xl bg-[#003580] px-5 py-3 text-center text-sm font-semibold text-white hover:bg-[#00254d] transition-colors"
+                  >
+                    Réserver sur Booking
+                  </a>
                 </div>
               </div>
 
-              {/* Localisation */}
               <div className="rounded-2xl border border-gray-200 p-6">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-beige text-brand-green">

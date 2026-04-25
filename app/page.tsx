@@ -4,91 +4,111 @@ import Hero from "@/components/Hero";
 import BenefitsSection from "@/components/BenefitsSection";
 import TestimonialsSection from "@/components/TestimonialCard";
 import JsonLd from "@/components/JsonLd";
-import { images, mobilHomeInfo, RATING, BOOKING_URL } from "@/lib/data";
+import { images, mobilHomeInfo, RATING, BOOKING_URL, AIRBNB_URL, seoHomeText } from "@/lib/data";
+
+function CTABlock() {
+  return (
+    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 py-4">
+      <a
+        href={AIRBNB_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-full sm:w-auto rounded-xl bg-[#FF5A5F] px-8 py-4 text-center text-base font-semibold text-white shadow-md hover:bg-[#e04e52] transition-colors"
+      >
+        Réserver sur Airbnb
+      </a>
+      <a
+        href={BOOKING_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-full sm:w-auto rounded-xl bg-[#003580] px-8 py-4 text-center text-base font-semibold text-white shadow-md hover:bg-[#00254d] transition-colors"
+      >
+        Voir les disponibilités
+      </a>
+    </div>
+  );
+}
 
 export default function HomePage() {
   return (
     <>
       <JsonLd />
-
       <Hero />
 
       {/* Nos mobil homes */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-center text-gray-900">
-            Nos mobil homes à Corte
+            Votre mobil-home à Corte, au cœur de la Corse
           </h2>
-          <p className="mt-4 text-center text-gray-600 max-w-2xl mx-auto">
-            Deux mobil homes identiques de {mobilHomeInfo.surface} m², tout équipés,
-            avec terrasse vue montagne. Idéal pour 2 à {mobilHomeInfo.capacity} personnes.
+          <p className="mt-4 text-center text-lg text-gray-600 max-w-2xl mx-auto">
+            Imaginez vos matins avec vue sur les montagnes, vos après-midi dans les piscines naturelles de la Restonica, vos soirées barbecue sur la terrasse…
           </p>
 
           <div className="mt-14">
             <article className="group overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-xl transition-shadow">
               <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="relative aspect-[4/3] md:aspect-auto overflow-hidden">
+                <div className="relative aspect-[4/3] md:aspect-auto min-h-[300px] overflow-hidden">
                   <Image
                     src={images[0].src}
                     alt={images[0].alt}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, 50vw"
+                    priority
                   />
-                  <div className="absolute top-4 left-4 flex gap-2">
-                    <span className="rounded-full bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-brand-green">
-                      {mobilHomeInfo.count} mobil homes
-                    </span>
-                    <span className="rounded-full bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-brand-green">
-                      {mobilHomeInfo.capacity} personnes
-                    </span>
-                  </div>
                 </div>
 
-                <div className="p-8 flex flex-col justify-center">
-                  <div className="flex items-center gap-2 text-sm mb-4">
-                    <svg className="h-4 w-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                <div className="p-8 sm:p-10 flex flex-col justify-center">
+                  <div className="flex items-center gap-2 text-sm mb-3">
+                    <svg className="h-5 w-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
-                    <span className="font-semibold text-gray-900">{RATING.value}/10</span>
-                    <span className="text-gray-400">({RATING.reviewCount} avis)</span>
+                    <span className="font-bold text-gray-900">{RATING.value}/5</span>
+                    <span className="text-gray-500">· Déjà réservé plus de {RATING.reviewCount} fois</span>
                   </div>
 
-                  <h3 className="font-serif text-2xl font-bold text-gray-900">
-                    Mobil Home tout confort
+                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-gray-900">
+                    2 mobil-homes · {mobilHomeInfo.surface} m² · Vue montagne
                   </h3>
-                  <p className="mt-1 text-sm text-gray-500">
-                    {mobilHomeInfo.surface} m² · {mobilHomeInfo.bedrooms} chambres · {mobilHomeInfo.bathrooms} salle de bain
+                  <p className="mt-2 text-gray-500">
+                    {mobilHomeInfo.bedrooms} chambres · {mobilHomeInfo.capacity} pers. · Terrasse privée
                   </p>
 
-                  <p className="mt-4 text-sm text-gray-600 leading-relaxed">
-                    Mobil home climatisé avec cuisine équipée, terrasse avec vue sur les montagnes corses,
-                    jardin et barbecue. À 20 min à pied de la Citadelle de Corte et à 15 min des gorges de la Restonica.
+                  <p className="mt-5 text-gray-700 leading-relaxed">
+                    Mobil-home climatisé avec terrasse face aux montagnes, cuisine équipée, jardin et barbecue. À 15 min des gorges de la Restonica et 20 min de la Citadelle de Corte.
                   </p>
 
-                  <div className="mt-6 flex items-center gap-4">
-                    <p className="text-lg font-bold text-brand-green">
-                      Dès {mobilHomeInfo.priceFrom} €
-                      <span className="text-sm font-normal text-gray-500"> / nuit</span>
-                    </p>
-                  </div>
+                  <p className="mt-5 text-2xl font-bold text-brand-green">
+                    Dès {mobilHomeInfo.priceFrom} €
+                    <span className="text-base font-normal text-gray-500"> / nuit</span>
+                  </p>
 
                   <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                    <Link
-                      href="/nos-mobil-homes"
-                      className="rounded-xl bg-brand-green px-6 py-3 text-center text-sm font-semibold text-white hover:bg-brand-green-light transition-colors"
+                    <a
+                      href={AIRBNB_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 rounded-xl bg-[#FF5A5F] px-6 py-3.5 text-center text-sm font-semibold text-white hover:bg-[#e04e52] transition-colors"
                     >
-                      Découvrir
-                    </Link>
+                      Réserver sur Airbnb
+                    </a>
                     <a
                       href={BOOKING_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-xl bg-[#003580] px-6 py-3 text-center text-sm font-semibold text-white hover:bg-[#00254d] transition-colors"
+                      className="flex-1 rounded-xl bg-[#003580] px-6 py-3.5 text-center text-sm font-semibold text-white hover:bg-[#00254d] transition-colors"
                     >
                       Réserver sur Booking
                     </a>
                   </div>
+
+                  <Link
+                    href="/nos-mobil-homes"
+                    className="mt-4 text-center text-sm font-medium text-brand-green hover:text-brand-green-light transition-colors"
+                  >
+                    Voir tous les détails et équipements →
+                  </Link>
                 </div>
               </div>
             </article>
@@ -98,7 +118,19 @@ export default function HomePage() {
 
       <BenefitsSection />
 
+      <div className="bg-white py-4">
+        <div className="mx-auto max-w-7xl px-4">
+          <CTABlock />
+        </div>
+      </div>
+
       <TestimonialsSection />
+
+      <div className="bg-white py-4">
+        <div className="mx-auto max-w-7xl px-4">
+          <CTABlock />
+        </div>
+      </div>
 
       {/* Aperçu localisation */}
       <section className="py-20 bg-brand-beige">
@@ -106,58 +138,83 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gray-900">
-                Corte, joyau de la Corse intérieure
+                Corte : la Corse authentique, loin des foules
               </h2>
-              <p className="mt-6 text-gray-600 leading-relaxed">
-                Ancienne capitale de la Corse indépendante, Corte est nichée au
-                cœur des montagnes. Gorges de la Restonica, GR20, citadelle
-                historique, rivières cristallines… Un cadre exceptionnel pour des
-                vacances nature et culture.
+              <p className="mt-6 text-gray-700 leading-relaxed text-lg">
+                Imaginez-vous plonger dans les vasques turquoise de la Restonica, randonner sur le mythique GR20, explorer une citadelle du XVème siècle… Tout ça à moins de 20 minutes de votre terrasse.
               </p>
               <p className="mt-4 text-gray-600 leading-relaxed">
-                Nos mobil homes sont idéalement situés pour explorer toute la
-                richesse de la région, des sommets enneigés aux plages de la côte
-                orientale.
+                Corte est au centre de la Corse — vous pouvez rejoindre les plages de la côte Est en 45 min, Ajaccio ou Bastia en 1h15. Le meilleur des deux mondes.
               </p>
               <Link
                 href="/localisation"
                 className="mt-8 inline-flex rounded-xl bg-brand-green px-6 py-3 text-sm font-semibold text-white hover:bg-brand-green-light transition-colors"
               >
-                Découvrir la région
+                Voir les activités à proximité
               </Link>
             </div>
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: "url('/images/corte-citadelle.png')" }}
-                role="img"
-                aria-label="Citadelle de Corte en Corse — découvrir la région pour vos vacances mobil home"
+              <Image
+                src="/images/corte-citadelle.png"
+                alt="Citadelle de Corte avec vue sur les montagnes — location mobil home Corse"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Bandeau réassurance */}
+      {/* Bandeau réassurance + CTA */}
       <section className="py-16 bg-brand-green text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center mb-10">
             <div>
-              <p className="text-3xl font-bold">{RATING.value}/10</p>
-              <p className="mt-1 text-sm text-gray-200">Note Booking</p>
+              <p className="text-3xl font-bold">{RATING.value}/5</p>
+              <p className="mt-1 text-sm text-gray-200">Note moyenne</p>
             </div>
             <div>
-              <p className="text-3xl font-bold">{RATING.reviewCount}</p>
-              <p className="mt-1 text-sm text-gray-200">Avis clients</p>
+              <p className="text-3xl font-bold">50+</p>
+              <p className="mt-1 text-sm text-gray-200">Séjours réalisés</p>
             </div>
             <div>
-              <p className="text-3xl font-bold">2</p>
-              <p className="mt-1 text-sm text-gray-200">Mobil homes</p>
+              <p className="text-3xl font-bold">15 min</p>
+              <p className="mt-1 text-sm text-gray-200">De la Restonica</p>
             </div>
             <div>
-              <p className="text-3xl font-bold">30 m²</p>
-              <p className="mt-1 text-sm text-gray-200">Tout équipé</p>
+              <p className="text-3xl font-bold">70 €</p>
+              <p className="mt-1 text-sm text-gray-200">À partir de / nuit</p>
             </div>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href={AIRBNB_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto rounded-xl bg-white px-8 py-4 text-center text-base font-semibold text-[#FF5A5F] hover:bg-gray-100 transition-colors"
+            >
+              Réserver sur Airbnb
+            </a>
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto rounded-xl bg-white/20 border border-white px-8 py-4 text-center text-base font-semibold text-white hover:bg-white/30 transition-colors"
+            >
+              Voir les disponibilités
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* SEO text block */}
+      <section className="py-16">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="prose prose-gray max-w-none">
+            {seoHomeText.split("\n\n").map((p, i) => (
+              <p key={i} className="text-gray-600 leading-relaxed">{p}</p>
+            ))}
           </div>
         </div>
       </section>

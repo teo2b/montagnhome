@@ -10,7 +10,7 @@ export default function JsonLd({ additionalData }: JsonLdProps) {
     "@type": "LodgingBusiness",
     name: SITE_NAME,
     description:
-      "Location de mobil homes à Corte, en Corse. Deux hébergements de 30m² tout équipés au cœur des montagnes corses avec terrasse vue montagne.",
+      "Location de mobil-homes à Corte, en Corse. Deux hébergements de 30m² tout équipés au cœur des montagnes corses avec terrasse vue montagne.",
     url: SITE_URL,
     email: CONTACT_EMAIL,
     address: {
@@ -29,13 +29,20 @@ export default function JsonLd({ additionalData }: JsonLdProps) {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: String(RATING.value),
-      bestRating: "10",
+      bestRating: String(RATING.max),
       reviewCount: String(RATING.reviewCount),
     },
     priceRange: "70€ - 110€ / nuit",
     numberOfRooms: 2,
     checkinTime: "18:00",
     checkoutTime: "10:00",
+    amenityFeature: [
+      { "@type": "LocationFeatureSpecification", name: "Climatisation", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Parking gratuit", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Terrasse vue montagne", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Barbecue", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Cuisine équipée", value: true },
+    ],
     ...additionalData,
   };
 

@@ -21,34 +21,36 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} | Location Mobil Home en Corse près de Corte`,
+    default: `Location Mobil-Home Corte, Corse — Vue Montagne, Tout Confort | ${SITE_NAME}`,
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Louez nos 2 mobil homes tout confort à Corte, en Corse. 30m², 2 chambres, terrasse vue montagne, cuisine équipée. Réservez sur Booking.com.",
+    "Louez un mobil-home tout confort à Corte, en Corse. 30m², terrasse vue montagne, calme absolu, à 15 min des gorges de la Restonica. Dès 70€/nuit. Réservez sur Airbnb ou Booking.",
   keywords: [
+    "location mobil home Corte",
+    "mobil home Corse centre",
     "location mobil home Corse",
-    "mobil home vacances Corse",
-    "location saisonnière mobil home France",
-    "mobil home Corte",
+    "mobil home Corte Corse",
     "vacances montagne Corse",
-    "hébergement Corte Corse",
+    "hébergement Corte",
     "location vacances Haute-Corse",
+    "mobil home Restonica",
+    "location saisonnière Corse",
   ],
   openGraph: {
     type: "website",
     locale: "fr_FR",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} — Location Mobil Home en Corse`,
+    title: `Location Mobil-Home à Corte, Corse — ${SITE_NAME}`,
     description:
-      "Deux mobil homes de charme à Corte, au cœur des montagnes corses. Nature, calme et confort pour des vacances inoubliables.",
+      "2 mobil-homes tout confort à Corte, Corse. Terrasse vue montagne, calme, nature. Dès 70€/nuit.",
     images: [
       {
-        url: "/images/og-image.svg",
+        url: "/images/hero-corse.png",
         width: 1200,
         height: 630,
-        alt: "Muntagn\u0027home — Location mobil home en Corse à Corte",
+        alt: "Muntagn'home — Location mobil-home à Corte, Corse, vue montagne",
       },
     ],
   },
@@ -67,7 +69,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="font-sans pb-20 md:pb-0">
+      <body className="font-sans">
         <Header />
         <main>{children}</main>
         <Footer />

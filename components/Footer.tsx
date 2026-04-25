@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { SITE_NAME, CONTACT_EMAIL, ADDRESS } from "@/lib/data";
+import { SITE_NAME, CONTACT_EMAIL, ADDRESS, BOOKING_URL, AIRBNB_URL } from "@/lib/data";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-gray-900 text-gray-300 pb-20 md:pb-0">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="md:col-span-1">
@@ -11,7 +11,7 @@ export default function Footer() {
               {SITE_NAME}
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-gray-400">
-              Location de mobil homes à Corte, en Corse. Vivez des vacances authentiques au cœur des montagnes corses.
+              Location mobil-home à Corte, Corse. Calme, nature et vue montagne au cœur de l&apos;île de Beauté.
             </p>
           </div>
 
@@ -22,7 +22,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/nos-mobil-homes" className="text-sm hover:text-white transition-colors">
-                  Nos Mobil Homes
+                  Nos Mobil-Homes
                 </Link>
               </li>
               <li>
@@ -40,13 +40,19 @@ export default function Footer() {
 
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
-              Infos pratiques
+              Réserver
             </h3>
             <ul className="space-y-2">
-              <li className="text-sm">2 mobil homes · 4 pers.</li>
-              <li className="text-sm">2 chambres · 30 m²</li>
-              <li className="text-sm">Arrivée 18h – 20h</li>
-              <li className="text-sm">Départ 05h – 10h</li>
+              <li>
+                <a href={AIRBNB_URL} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-white transition-colors">
+                  Réserver sur Airbnb →
+                </a>
+              </li>
+              <li>
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-white transition-colors">
+                  Réserver sur Booking →
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -67,7 +73,7 @@ export default function Footer() {
             © {new Date().getFullYear()} {SITE_NAME}. Tous droits réservés.
           </p>
           <p className="text-xs text-gray-500">
-            Location mobil home Corse — Corte, Haute-Corse
+            Location mobil-home Corte, Corse — Calme, nature et vue montagne
           </p>
         </div>
       </div>

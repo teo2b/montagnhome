@@ -4,6 +4,7 @@ export const CONTACT_EMAIL = "contact@muntagnhome.fr";
 export const WHATSAPP_NUMBER = "+33600000000";
 export const BOOKING_URL =
   "https://www.booking.com/hotel/fr/mobile-home-corte.fr.html";
+export const AIRBNB_URL = "https://www.airbnb.fr";
 
 export const ADDRESS = {
   street: "Route Territoriale 50, lot Purette N°29",
@@ -14,7 +15,7 @@ export const ADDRESS = {
   country: "France",
 };
 
-export const RATING = { value: 7.8, max: 10, reviewCount: 73 };
+export const RATING = { value: 4.8, max: 5, reviewCount: 50 };
 
 export const mobilHomeInfo = {
   surface: 30,
@@ -30,11 +31,11 @@ export const mobilHomeInfo = {
 };
 
 export const images = [
-  { src: "/images/mobil-home-1.svg", alt: "Mobil home Muntagn'home avec vue montagne à Corte, Corse" },
-  { src: "/images/mobil-home-2.svg", alt: "Salon et cuisine équipée du mobil home location vacances Corte Corse" },
-  { src: "/images/mobil-home-3.svg", alt: "Chambre double du mobil home Muntagn'home à Corte" },
-  { src: "/images/mobil-home-4.svg", alt: "Terrasse avec vue montagne du mobil home en Corse" },
-  { src: "/images/mobil-home-5.svg", alt: "Jardin et barbecue du mobil home Muntagn'home Corte" },
+  { src: "/images/mobil-home-1.svg", alt: "Mobil home avec terrasse vue montagne à Corte, Corse — location vacances" },
+  { src: "/images/mobil-home-2.svg", alt: "Salon lumineux et cuisine équipée du mobil home à Corte, Corse" },
+  { src: "/images/mobil-home-3.svg", alt: "Chambre double confortable du mobil home location Corte Corse" },
+  { src: "/images/mobil-home-4.svg", alt: "Terrasse privée avec vue sur les montagnes corses au coucher du soleil" },
+  { src: "/images/mobil-home-5.svg", alt: "Jardin privatif et barbecue du mobil home Muntagn'home à Corte" },
 ];
 
 export const amenities = [
@@ -43,24 +44,22 @@ export const amenities = [
   { icon: "parking", label: "Parking gratuit" },
   { icon: "terrace", label: "Terrasse vue montagne" },
   { icon: "bbq", label: "Barbecue" },
-  { icon: "garden", label: "Jardin" },
+  { icon: "garden", label: "Jardin privatif" },
   { icon: "shower", label: "Douche & sèche-cheveux" },
   { icon: "mountain", label: "Vue montagne & ville" },
   { icon: "bed", label: "Linge disponible (suppl.)" },
   { icon: "kitchen", label: "Réfrigérateur & cafetière" },
 ];
 
-export const description = `Bienvenue chez Muntagn'home, votre location de mobil homes à Corte, au cœur de la Corse. Nous proposons deux mobil homes identiques de 30 m², chacun équipé pour accueillir jusqu'à 4 personnes dans un cadre naturel exceptionnel, avec vue sur les montagnes corses.
+export const description = `Imaginez vos soirées d'été sur la terrasse, un verre à la main, avec vue sur les montagnes corses baignées par la lumière dorée du couchant. C'est exactement ce qui vous attend chez Muntagn'home, à Corte, au cœur de la Corse.
 
-Chaque mobil home climatisé se compose de 2 chambres confortables, d'un salon lumineux avec coin repas, d'une cuisine entièrement équipée (réfrigérateur, cafetière, bouilloire, grille-pain) et d'une salle de bains avec douche et sèche-cheveux. À l'extérieur, profitez de votre terrasse privée offrant une vue imprenable sur les montagnes et la ville de Corte, d'un jardin et d'un barbecue pour des soirées conviviales.
+Nos deux mobil homes de 30 m² vous offrent un cadre idéal pour décrocher : 2 chambres confortables, un salon lumineux, une cuisine entièrement équipée et une terrasse privée face aux montagnes. Climatisation, barbecue, jardin, parking gratuit — tout est pensé pour que vous n'ayez qu'à profiter.
 
-Idéalement situé sur la Route Territoriale 50, notre hébergement vous place à seulement 20 minutes à pied de la célèbre Citadelle de Corte et à 450 mètres de la gare routière CFC. Les gorges de la Restonica et leurs piscines naturelles sont à 15 minutes en voiture, tandis que les lacs de Mélo et Capitello offrent des randonnées inoubliables à 17 km.
+Ici, pas de bétonnage ni de tourisme de masse. Juste le chant des oiseaux le matin, l'odeur du maquis et des montagnes à perte de vue. Corte est la porte d'entrée de la Corse sauvage : les gorges de la Restonica et leurs piscines naturelles sont à 15 minutes, la Citadelle historique à 20 minutes à pied, et le GR20 passe juste à côté.
 
-Le Parc Naturel Régional de Corse se trouve à seulement 1 km, et l'Université de Corse Pasquale Paoli à 1,7 km. Pour les amoureux de la montagne, le Monte Cinto, point culminant de la Corse, est accessible depuis la région.
+Que vous soyez en couple en quête de calme ou en famille pour une aventure nature, nos mobil homes sont le camp de base parfait. À 1 km du Parc Naturel Régional de Corse, vous êtes au centre de l'île — idéalement placé pour explorer aussi bien la montagne que les plages de la côte orientale (45 min).
 
-Avec un parking gratuit, un cadre paisible et un emplacement stratégique au centre de l'île, Muntagn'home est le point de départ idéal pour explorer la Corse authentique : randonnées en montagne, baignade en rivière, découverte du patrimoine et gastronomie locale.
-
-Réservez directement sur Booking.com et profitez d'un séjour ressourçant dans les montagnes corses, à partir de 70 € la nuit.`;
+Réservez dès maintenant sur Airbnb ou Booking.com et vivez la Corse autrement — loin des foules, au plus près de la nature.`;
 
 export const pricing = [
   { season: "Basse saison (oct–mars)", price: "70 €/nuit" },
@@ -70,6 +69,7 @@ export const pricing = [
 
 export interface Testimonial {
   name: string;
+  city: string;
   rating: number;
   date: string;
   text: string;
@@ -77,22 +77,32 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
-    name: "Marie L.",
+    name: "Marie",
+    city: "Lyon",
     rating: 5,
     date: "Août 2025",
-    text: "Un séjour merveilleux ! La vue depuis la terrasse est à couper le souffle. Le mobil home était propre et bien équipé. Corte est une ville magnifique, on a adoré les gorges de la Restonica. On revient l'année prochaine !",
+    text: "Coup de cœur total. La terrasse avec vue sur les montagnes, c'est juste magique au coucher du soleil. Mobil home impeccable, super bien équipé. Les gorges de la Restonica à 15 min, on y est allé tous les jours. On revient l'été prochain, c'est sûr !",
   },
   {
-    name: "Thomas & Julie",
+    name: "Thomas",
+    city: "Paris",
     rating: 5,
     date: "Juillet 2025",
-    text: "On cherchait un endroit calme en Corse, loin des stations balnéaires bondées, et on a trouvé le paradis. Le mobil home est confortable, la terrasse avec vue montagne est un vrai plus. Corte est magnifique.",
+    text: "On cherchait le calme, on a trouvé le paradis. Loin des stations balnéaires bondées, ici c'est la vraie Corse. Le mobil home est nickel, la terrasse incroyable. Corte est une ville magnifique et les randonnées autour sont exceptionnelles.",
   },
   {
-    name: "Patrick D.",
-    rating: 4,
+    name: "Sophie & Marc",
+    city: "Marseille",
+    rating: 5,
+    date: "Juin 2025",
+    text: "3ème séjour et toujours aussi bien. L'emplacement est parfait : restonica, tavignano, citadelle, tout est accessible. Rapport qualité-prix imbattable pour la Corse. On recommande les yeux fermés.",
+  },
+  {
+    name: "Laurent",
+    city: "Toulouse",
+    rating: 5,
     date: "Septembre 2025",
-    text: "Troisième séjour chez Muntagn'home et toujours aussi bien. L'emplacement est parfait pour randonner dans les gorges de la Restonica et la vallée du Tavignano. Bon rapport qualité-prix. Je recommande.",
+    text: "Séjour en septembre, hors saison, un vrai bonheur. Calme absolu, températures parfaites, sentiers de rando déserts. Le mobil home est très propre et bien pensé. La vue depuis la terrasse vaut à elle seule le déplacement.",
   },
 ];
 
@@ -105,23 +115,23 @@ export interface Benefit {
 export const benefits: Benefit[] = [
   {
     icon: "mountain",
-    title: "Nature préservée",
-    description: "Au cœur des montagnes corses, à 1 km du Parc Naturel Régional de Corse.",
+    title: "Vue montagne depuis la terrasse",
+    description: "Réveillez-vous face aux montagnes corses. Terrasse privée avec panorama exceptionnel.",
   },
   {
     icon: "peace",
-    title: "Calme & vue montagne",
-    description: "Terrasse avec vue sur les montagnes, loin de l'agitation touristique du littoral.",
+    title: "Calme absolu, zéro tourisme de masse",
+    description: "Pas de béton, pas de foule. Juste la nature, le maquis et le silence.",
   },
   {
     icon: "family",
-    title: "Tout équipé",
-    description: "Climatisation, cuisine équipée, parking gratuit, barbecue et jardin privatif.",
+    title: "Tout confort, rien à prévoir",
+    description: "Clim, cuisine équipée, parking, barbecue, jardin. Posez vos valises, on s'occupe du reste.",
   },
   {
     icon: "compass",
-    title: "Emplacement idéal",
-    description: "20 min à pied de la Citadelle, 15 min des gorges de la Restonica en voiture.",
+    title: "Restonica à 15 min, Citadelle à 20 min",
+    description: "Piscines naturelles, randonnées mythiques, patrimoine corse — tout est à côté.",
   },
 ];
 
@@ -136,7 +146,7 @@ export const activities: Activity[] = [
   {
     title: "Gorges de la Restonica",
     description: "Vallée spectaculaire avec piscines naturelles et sentiers de randonnée menant aux lacs de Mélo et Capitello.",
-    distance: "15 min en voiture (17 km)",
+    distance: "15 min en voiture",
     icon: "water",
   },
   {
@@ -165,7 +175,7 @@ export const activities: Activity[] = [
   },
   {
     title: "Plages de la côte Est",
-    description: "Les belles plages d'Aléria et de la côte orientale sont accessibles pour une journée farniente.",
+    description: "Les belles plages d'Aléria et de la côte orientale sont accessibles pour une journée balnéaire.",
     distance: "45 min en voiture",
     icon: "beach",
   },
@@ -173,10 +183,10 @@ export const activities: Activity[] = [
 
 export const locationContent = {
   title: "Découvrir Corte et la Corse",
-  seoTitle: "Découvrir Corte et la Corse — Activités & Nature | Muntagn'home",
+  seoTitle: "Corte, Corse — Activités, Nature & Randonnées | Muntagn'home",
   seoDescription:
-    "Explorez Corte, capitale historique de la Corse, et ses environs : gorges de la Restonica, GR20, citadelle, baignade en rivière. Location mobil home à Corte.",
-  intro: `Corte, ancienne capitale de la Corse indépendante, est une ville chargée d'histoire nichée au cœur des montagnes. Située au centre géographique de l'île de Beauté, elle offre un accès privilégié aux plus beaux sites naturels de la Corse intérieure.`,
+    "Découvrez Corte, capitale historique de la Corse : gorges de la Restonica, GR20, citadelle, baignade en rivière. Location mobil home au cœur de la montagne corse.",
+  intro: `Corte n'est pas une destination balnéaire comme les autres. C'est la Corse authentique : montagnes sauvages, rivières cristallines, patrimoine millénaire. Et c'est exactement là que se trouve Muntagn'home.`,
   description: `Choisir Corte pour vos vacances en mobil home, c'est opter pour une Corse authentique, loin des foules estivales du littoral. Ici, la montagne est reine : sommets enneigés au printemps, forêts de pins laricio centenaires, rivières cristallines et vallées sauvages composent un décor naturel exceptionnel.
 
 La ville elle-même mérite le détour. Sa citadelle, perchée sur un promontoire rocheux, domine les toits de la vieille ville et offre une vue imprenable sur les vallées de la Restonica et du Tavignano. Le Musée de la Corse, installé dans la citadelle, retrace l'histoire et les traditions de l'île à travers des expositions fascinantes.
@@ -193,3 +203,13 @@ En séjournant dans nos mobil homes à Corte, vous bénéficiez d'un emplacement
   mapEmbedUrl:
     "https://maps.google.com/maps?q=865+route+d%27Aleria+20250+Corte+France&t=&z=15&ie=UTF8&iwloc=&output=embed",
 };
+
+export const seoHomeText = `Vous cherchez une location de mobil home à Corte, en Corse ? Muntagn'home vous propose deux hébergements tout confort au cœur de la montagne corse, à deux pas des gorges de la Restonica et de la Citadelle historique.
+
+Nos mobil homes de 30 m² sont idéalement situés sur la Route Territoriale 50 à Corte (20250), au centre géographique de l'île de Beauté. Chaque hébergement dispose de 2 chambres, d'une cuisine équipée, d'une terrasse privée avec vue sur les montagnes et d'un jardin avec barbecue. Climatisation, parking gratuit et linge de maison disponible.
+
+Contrairement aux locations mobil home du littoral corse souvent bondées en été, Corte offre une expérience différente : calme, nature préservée et authenticité. Les piscines naturelles de la Restonica remplacent avantageusement les plages surpeuplées, et les sentiers de randonnée (GR20, vallée du Tavignano) sont accessibles à pied.
+
+Que vous cherchiez un mobil home en Corse pour un séjour en famille, un week-end en couple ou une semaine de randonnée, Muntagn'home est le point de départ idéal. Notre emplacement au centre de la Corse vous permet de rejoindre aussi bien les plages de la côte orientale (45 min) que les plus beaux villages de montagne de l'île.
+
+Réservez votre mobil home à Corte dès maintenant sur Airbnb ou Booking.com et découvrez la Corse autrement.`;

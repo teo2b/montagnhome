@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
 import MapEmbed from "@/components/MapEmbed";
 import JsonLd from "@/components/JsonLd";
-import { locationContent, activities, SITE_URL, BOOKING_URL } from "@/lib/data";
+import { locationContent, activities, SITE_URL, BOOKING_URL, AIRBNB_URL } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: locationContent.seoTitle,
@@ -20,9 +20,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: {
-    canonical: `${SITE_URL}/localisation`,
-  },
+  alternates: { canonical: `${SITE_URL}/localisation` },
 };
 
 const activityIcons: Record<string, React.ReactNode> = {
@@ -59,6 +57,29 @@ const activityIcons: Record<string, React.ReactNode> = {
   ),
 };
 
+function CTABlock() {
+  return (
+    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a
+        href={AIRBNB_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-full sm:w-auto rounded-xl bg-[#FF5A5F] px-8 py-4 text-center text-base font-semibold text-white shadow-md hover:bg-[#e04e52] transition-colors"
+      >
+        Réserver sur Airbnb
+      </a>
+      <a
+        href={BOOKING_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-full sm:w-auto rounded-xl bg-[#003580] px-8 py-4 text-center text-base font-semibold text-white shadow-md hover:bg-[#00254d] transition-colors"
+      >
+        Voir les disponibilités
+      </a>
+    </div>
+  );
+}
+
 export default function LocalisationPage() {
   return (
     <>
@@ -67,15 +88,16 @@ export default function LocalisationPage() {
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/40 z-10" />
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/corte-panorama.png')" }}
-          role="img"
-          aria-label="Vue panoramique de Corte en Corse — découvrir la région pour location mobil home"
+        <Image
+          src="/images/corte-panorama.png"
+          alt="Vue panoramique de Corte et ses montagnes — location mobil home Corse"
+          fill
+          className="object-cover"
+          priority
         />
         <div className="relative z-20 text-center px-4">
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white">
-            {locationContent.title}
+            Corte et la Corse : nature, culture et aventure
           </h1>
           <p className="mt-4 text-lg text-gray-200 max-w-2xl mx-auto">
             {locationContent.intro}
@@ -83,18 +105,19 @@ export default function LocalisationPage() {
         </div>
       </section>
 
-      {/* Description de la région */}
+      {/* Description */}
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-3xl font-bold text-gray-900 mb-8">
-            Corte, capitale historique au cœur des montagnes
+            Pourquoi Corte ? La Corse authentique, loin des foules
           </h2>
           <div className="prose prose-lg prose-gray max-w-none">
             {locationContent.description.split("\n\n").map((paragraph, i) => (
-              <p key={i} className="text-gray-700 leading-relaxed">
-                {paragraph}
-              </p>
+              <p key={i} className="text-gray-700 leading-relaxed">{paragraph}</p>
             ))}
+          </div>
+          <div className="mt-10">
+            <CTABlock />
           </div>
         </div>
       </section>
@@ -103,10 +126,10 @@ export default function LocalisationPage() {
       <section className="py-20 bg-brand-beige">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-center text-gray-900">
-            Activités à proximité
+            Ce qui vous attend autour de nos mobil-homes
           </h2>
           <p className="mt-4 text-center text-gray-600 max-w-2xl mx-auto">
-            La région de Corte regorge d&apos;activités pour tous les goûts : randonnée, baignade, patrimoine, gastronomie…
+            Randonnées, piscines naturelles, patrimoine, gastronomie — tout est à côté.
           </p>
 
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -130,6 +153,10 @@ export default function LocalisationPage() {
               </article>
             ))}
           </div>
+
+          <div className="mt-14">
+            <CTABlock />
+          </div>
         </div>
       </section>
 
@@ -137,38 +164,40 @@ export default function LocalisationPage() {
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-3xl font-bold text-center text-gray-900 mb-10">
-            Nous trouver
+            Où se trouvent nos mobil-homes
           </h2>
           <MapEmbed src={locationContent.mapEmbedUrl} />
           <p className="mt-6 text-center text-gray-600">
-            Corte, Haute-Corse — Au centre de la Corse, accessible depuis Bastia (1h15) et Ajaccio (1h15).
+            Corte, Haute-Corse — Au centre géographique de l&apos;île, accessible depuis Bastia (1h15) et Ajaccio (1h15).
           </p>
         </div>
       </section>
 
-      {/* CTA vers hébergements */}
+      {/* CTA finale */}
       <section className="py-16 bg-brand-green text-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-serif text-3xl font-bold">
-            Prêt à découvrir la Corse ?
+            Vivez la Corse autrement
           </h2>
-          <p className="mt-4 text-gray-200">
-            Réservez votre mobil home à Corte et profitez de tout ce que la région a à offrir.
+          <p className="mt-4 text-lg text-gray-200">
+            Montagne, rivières, patrimoine — tout est à portée de main depuis votre terrasse.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/nos-mobil-homes"
-              className="w-full sm:w-auto rounded-xl bg-white px-8 py-4 text-base font-semibold text-brand-green hover:bg-brand-beige transition-colors"
+            <a
+              href={AIRBNB_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto rounded-xl bg-white px-8 py-4 text-base font-semibold text-[#FF5A5F] hover:bg-gray-100 transition-colors"
             >
-              Voir nos mobil homes
-            </Link>
+              Réserver sur Airbnb
+            </a>
             <a
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto rounded-xl bg-white/20 border border-white px-8 py-4 text-base font-semibold text-white hover:bg-white/30 transition-colors"
             >
-              Réserver sur Booking
+              Voir les disponibilités
             </a>
           </div>
         </div>

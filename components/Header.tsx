@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { SITE_NAME } from "@/lib/data";
+import { SITE_NAME, BOOKING_URL, AIRBNB_URL } from "@/lib/data";
 
 const navLinks = [
   { href: "/", label: "Accueil" },
-  { href: "/nos-mobil-homes", label: "Nos Mobil Homes" },
+  { href: "/nos-mobil-homes", label: "Nos Mobil-Homes" },
   { href: "/localisation", label: "Localisation" },
   { href: "/contact", label: "Contact" },
 ];
@@ -37,12 +37,22 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
-            <Link
-              href="/nos-mobil-homes"
-              className="rounded-xl bg-brand-green px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-green-light transition-colors"
+            <a
+              href={AIRBNB_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg bg-[#FF5A5F] px-4 py-2 text-sm font-semibold text-white hover:bg-[#e04e52] transition-colors"
             >
-              Réserver
-            </Link>
+              Airbnb
+            </a>
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg bg-[#003580] px-4 py-2 text-sm font-semibold text-white hover:bg-[#00254d] transition-colors"
+            >
+              Booking
+            </a>
           </div>
 
           <button
@@ -78,13 +88,26 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/nos-mobil-homes"
-              onClick={() => setMobileOpen(false)}
-              className="mt-2 rounded-xl bg-brand-green px-5 py-3 text-center text-sm font-semibold text-white hover:bg-brand-green-light transition-colors"
-            >
-              Réserver maintenant
-            </Link>
+            <div className="flex gap-2 mt-3">
+              <a
+                href={AIRBNB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="flex-1 rounded-xl bg-[#FF5A5F] px-4 py-3 text-center text-sm font-semibold text-white"
+              >
+                Réserver sur Airbnb
+              </a>
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="flex-1 rounded-xl bg-[#003580] px-4 py-3 text-center text-sm font-semibold text-white"
+              >
+                Réserver sur Booking
+              </a>
+            </div>
           </nav>
         </div>
       )}
