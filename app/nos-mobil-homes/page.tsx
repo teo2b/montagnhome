@@ -7,7 +7,6 @@ import {
   SITE_URL,
   SITE_NAME,
   BOOKING_URL,
-  AIRBNB_URL,
   images,
   amenities,
   pricing,
@@ -19,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: `Location Mobil-Home Corte, Corse — Vue Montagne, Tout Confort | ${SITE_NAME}`,
   description:
-    "Louez un mobil-home tout confort à Corte en Corse : 30m², 2 chambres, terrasse vue montagne, clim, barbecue. Dès 70€/nuit. Réservez sur Airbnb ou Booking.",
+    "Louez un mobil-home tout confort à Corte en Corse : 30m², 2 chambres, terrasse vue montagne, clim, barbecue. Dès 70€/nuit. Réservez sur Booking.com.",
   openGraph: {
     title: `Location Mobil-Home à Corte, Corse — ${SITE_NAME}`,
     description:
@@ -30,26 +29,16 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/nos-mobil-homes` },
 };
 
-function CTABlock() {
+function CTAButton() {
   return (
-    <div className="flex flex-col sm:flex-row gap-3">
-      <a
-        href={AIRBNB_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex-1 rounded-xl bg-[#FF5A5F] px-6 py-3.5 text-center text-sm font-semibold text-white hover:bg-[#e04e52] transition-colors"
-      >
-        Réserver sur Airbnb
-      </a>
-      <a
-        href={BOOKING_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex-1 rounded-xl bg-[#003580] px-6 py-3.5 text-center text-sm font-semibold text-white hover:bg-[#00254d] transition-colors"
-      >
-        Réserver sur Booking
-      </a>
-    </div>
+    <a
+      href={BOOKING_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block w-full rounded-xl bg-[#003580] px-6 py-3.5 text-center text-sm font-semibold text-white shadow-md hover:bg-[#00254d] transition-colors"
+    >
+      Réserver sur Booking.com
+    </a>
   );
 }
 
@@ -107,10 +96,9 @@ export default function NosMobilHomesPage() {
             </div>
 
             <div className="sm:hidden">
-              <CTABlock />
+              <CTAButton />
             </div>
 
-            {/* Detailed description for SEO */}
             <div>
               <h2 className="font-serif text-2xl font-bold text-gray-900 mb-4">
                 Un mobil-home tout confort au cœur de la montagne corse
@@ -134,7 +122,7 @@ export default function NosMobilHomesPage() {
               </div>
             </div>
 
-            <CTABlock />
+            <CTAButton />
 
             <div>
               <h2 className="font-serif text-2xl font-bold text-gray-900 mb-6">
@@ -166,11 +154,11 @@ export default function NosMobilHomesPage() {
                 </table>
               </div>
               <p className="mt-3 text-xs text-gray-500">
-                * Tarifs indicatifs. Consultez Airbnb ou Booking pour les prix exacts et disponibilités.
+                * Tarifs indicatifs. Consultez Booking.com pour les prix exacts et disponibilités.
               </p>
             </div>
 
-            <CTABlock />
+            <CTAButton />
 
             <div>
               <h2 className="font-serif text-2xl font-bold text-gray-900 mb-6">
@@ -229,22 +217,9 @@ export default function NosMobilHomesPage() {
                   <span className="text-gray-500">· {RATING.reviewCount}+ séjours</span>
                 </div>
 
-                <a
-                  href={AIRBNB_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 block w-full rounded-xl bg-[#FF5A5F] px-6 py-3.5 text-center text-sm font-semibold text-white shadow-md hover:bg-[#e04e52] transition-colors"
-                >
-                  Réserver sur Airbnb
-                </a>
-                <a
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 block w-full rounded-xl bg-[#003580] px-6 py-3.5 text-center text-sm font-semibold text-white shadow-md hover:bg-[#00254d] transition-colors"
-                >
-                  Réserver sur Booking
-                </a>
+                <div className="mt-6">
+                  <CTAButton />
+                </div>
 
                 <div className="mt-6 space-y-3 text-sm text-gray-600">
                   <div className="flex items-center gap-2">

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import JsonLd from "@/components/JsonLd";
-import { CONTACT_EMAIL, WHATSAPP_NUMBER, SITE_URL, SITE_NAME, BOOKING_URL, AIRBNB_URL } from "@/lib/data";
+import { CONTACT_EMAIL, WHATSAPP_NUMBER, SITE_URL, SITE_NAME, BOOKING_URL } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: `Contactez-nous — Location Mobil-Home Corte, Corse`,
@@ -79,24 +79,14 @@ export default function ContactPage() {
 
               <div className="rounded-2xl bg-brand-beige p-6">
                 <h3 className="font-semibold text-gray-900 mb-3">Vous préférez réserver directement ?</h3>
-                <div className="space-y-3">
-                  <a
-                    href={AIRBNB_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full rounded-xl bg-[#FF5A5F] px-5 py-3 text-center text-sm font-semibold text-white hover:bg-[#e04e52] transition-colors"
-                  >
-                    Réserver sur Airbnb
-                  </a>
-                  <a
-                    href={BOOKING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full rounded-xl bg-[#003580] px-5 py-3 text-center text-sm font-semibold text-white hover:bg-[#00254d] transition-colors"
-                  >
-                    Réserver sur Booking
-                  </a>
-                </div>
+                <a
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full rounded-xl bg-[#003580] px-5 py-3 text-center text-sm font-semibold text-white hover:bg-[#00254d] transition-colors"
+                >
+                  Réserver sur Booking.com
+                </a>
               </div>
 
               <div className="rounded-2xl border border-gray-200 p-6">

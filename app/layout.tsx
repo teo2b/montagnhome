@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Louez un mobil-home tout confort à Corte, en Corse. 30m², terrasse vue montagne, calme absolu, à 15 min des gorges de la Restonica. Dès 70€/nuit. Réservez sur Airbnb ou Booking.",
+    "Louez un mobil-home tout confort à Corte, en Corse. 30m², terrasse vue montagne, calme absolu, à 15 min des gorges de la Restonica. Dès 70€/nuit. Réservez sur Booking.com.",
   keywords: [
     "location mobil home Corte",
     "mobil home Corse centre",

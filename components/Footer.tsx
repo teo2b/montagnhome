@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SITE_NAME, CONTACT_EMAIL, ADDRESS, BOOKING_URL, AIRBNB_URL } from "@/lib/data";
+import { SITE_NAME, CONTACT_EMAIL, ADDRESS, BOOKING_URL } from "@/lib/data";
 
 export default function Footer() {
   return (
@@ -44,13 +44,8 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href={AIRBNB_URL} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-white transition-colors">
-                  Réserver sur Airbnb →
-                </a>
-              </li>
-              <li>
                 <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-white transition-colors">
-                  Réserver sur Booking →
+                  Réserver sur Booking.com →
                 </a>
               </li>
             </ul>

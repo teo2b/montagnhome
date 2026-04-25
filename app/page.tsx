@@ -4,26 +4,18 @@ import Hero from "@/components/Hero";
 import BenefitsSection from "@/components/BenefitsSection";
 import TestimonialsSection from "@/components/TestimonialCard";
 import JsonLd from "@/components/JsonLd";
-import { images, mobilHomeInfo, RATING, BOOKING_URL, AIRBNB_URL, seoHomeText } from "@/lib/data";
+import { images, mobilHomeInfo, RATING, BOOKING_URL, seoHomeText } from "@/lib/data";
 
 function CTABlock() {
   return (
-    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 py-4">
-      <a
-        href={AIRBNB_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-full sm:w-auto rounded-xl bg-[#FF5A5F] px-8 py-4 text-center text-base font-semibold text-white shadow-md hover:bg-[#e04e52] transition-colors"
-      >
-        Réserver sur Airbnb
-      </a>
+    <div className="flex justify-center py-4">
       <a
         href={BOOKING_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-full sm:w-auto rounded-xl bg-[#003580] px-8 py-4 text-center text-base font-semibold text-white shadow-md hover:bg-[#00254d] transition-colors"
+        className="w-full sm:w-auto rounded-xl bg-[#003580] px-10 py-4 text-center text-base font-semibold text-white shadow-md hover:bg-[#00254d] transition-colors"
       >
-        Voir les disponibilités
+        Voir les disponibilités sur Booking.com
       </a>
     </div>
   );
@@ -84,22 +76,14 @@ export default function HomePage() {
                     <span className="text-base font-normal text-gray-500"> / nuit</span>
                   </p>
 
-                  <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                    <a
-                      href={AIRBNB_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 rounded-xl bg-[#FF5A5F] px-6 py-3.5 text-center text-sm font-semibold text-white hover:bg-[#e04e52] transition-colors"
-                    >
-                      Réserver sur Airbnb
-                    </a>
+                  <div className="mt-6">
                     <a
                       href={BOOKING_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 rounded-xl bg-[#003580] px-6 py-3.5 text-center text-sm font-semibold text-white hover:bg-[#00254d] transition-colors"
+                      className="block w-full rounded-xl bg-[#003580] px-6 py-3.5 text-center text-sm font-semibold text-white hover:bg-[#00254d] transition-colors"
                     >
-                      Réserver sur Booking
+                      Réserver sur Booking.com
                     </a>
                   </div>
 
@@ -187,22 +171,14 @@ export default function HomePage() {
               <p className="mt-1 text-sm text-gray-200">À partir de / nuit</p>
             </div>
           </div>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href={AIRBNB_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto rounded-xl bg-white px-8 py-4 text-center text-base font-semibold text-[#FF5A5F] hover:bg-gray-100 transition-colors"
-            >
-              Réserver sur Airbnb
-            </a>
+          <div className="flex justify-center">
             <a
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto rounded-xl bg-white/20 border border-white px-8 py-4 text-center text-base font-semibold text-white hover:bg-white/30 transition-colors"
+              className="w-full sm:w-auto rounded-xl bg-white px-10 py-4 text-center text-base font-semibold text-[#003580] hover:bg-gray-100 transition-colors"
             >
-              Voir les disponibilités
+              Voir les disponibilités sur Booking.com
             </a>
           </div>
         </div>

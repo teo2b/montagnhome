@@ -1,4 +1,4 @@
-import { BOOKING_URL, AIRBNB_URL } from "@/lib/data";
+import { BOOKING_URL } from "@/lib/data";
 
 export default function Hero() {
   return (
@@ -20,22 +20,14 @@ export default function Hero() {
           2 mobil-homes tout confort au cœur de la vallée de&nbsp;la&nbsp;Restonica
         </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href={AIRBNB_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto rounded-xl bg-[#FF5A5F] px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-[#e04e52] transition-colors"
-          >
-            Réserver sur Airbnb
-          </a>
+        <div className="mt-10">
           <a
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto rounded-xl bg-[#003580] px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-[#00254d] transition-colors"
+            className="inline-block rounded-xl bg-[#003580] px-10 py-4 text-base font-semibold text-white shadow-lg hover:bg-[#00254d] transition-colors"
           >
-            Réserver sur Booking
+            Réserver sur Booking.com
           </a>
         </div>
 

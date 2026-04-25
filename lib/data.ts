@@ -4,7 +4,6 @@ export const CONTACT_EMAIL = "contact@muntagnhome.fr";
 export const WHATSAPP_NUMBER = "+33600000000";
 export const BOOKING_URL =
   "https://www.booking.com/hotel/fr/mobile-home-corte.fr.html";
-export const AIRBNB_URL = "https://www.airbnb.fr";
 
 export const ADDRESS = {
   street: "Route Territoriale 50, lot Purette N°29",
@@ -59,7 +58,7 @@ Ici, pas de bétonnage ni de tourisme de masse. Juste le chant des oiseaux le ma
 
 Que vous soyez en couple en quête de calme ou en famille pour une aventure nature, nos mobil homes sont le camp de base parfait. À 1 km du Parc Naturel Régional de Corse, vous êtes au centre de l'île — idéalement placé pour explorer aussi bien la montagne que les plages de la côte orientale (45 min).
 
-Réservez dès maintenant sur Airbnb ou Booking.com et vivez la Corse autrement — loin des foules, au plus près de la nature.`;
+Réservez dès maintenant sur Booking.com et vivez la Corse autrement — loin des foules, au plus près de la nature.`;
 
 export const pricing = [
   { season: "Basse saison (oct–mars)", price: "70 €/nuit" },
@@ -212,4 +211,4 @@ Contrairement aux locations mobil home du littoral corse souvent bondées en ét
 
 Que vous cherchiez un mobil home en Corse pour un séjour en famille, un week-end en couple ou une semaine de randonnée, Muntagn'home est le point de départ idéal. Notre emplacement au centre de la Corse vous permet de rejoindre aussi bien les plages de la côte orientale (45 min) que les plus beaux villages de montagne de l'île.
 
-Réservez votre mobil home à Corte dès maintenant sur Airbnb ou Booking.com et découvrez la Corse autrement.`;
+Réservez votre mobil home à Corte dès maintenant sur Booking.com et découvrez la Corse autrement.`;

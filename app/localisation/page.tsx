@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import MapEmbed from "@/components/MapEmbed";
 import JsonLd from "@/components/JsonLd";
-import { locationContent, activities, SITE_URL, BOOKING_URL, AIRBNB_URL } from "@/lib/data";
+import { locationContent, activities, SITE_URL, BOOKING_URL } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: locationContent.seoTitle,
@@ -57,29 +57,6 @@ const activityIcons: Record<string, React.ReactNode> = {
   ),
 };
 
-function CTABlock() {
-  return (
-    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a
-        href={AIRBNB_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-full sm:w-auto rounded-xl bg-[#FF5A5F] px-8 py-4 text-center text-base font-semibold text-white shadow-md hover:bg-[#e04e52] transition-colors"
-      >
-        Réserver sur Airbnb
-      </a>
-      <a
-        href={BOOKING_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-full sm:w-auto rounded-xl bg-[#003580] px-8 py-4 text-center text-base font-semibold text-white shadow-md hover:bg-[#00254d] transition-colors"
-      >
-        Voir les disponibilités
-      </a>
-    </div>
-  );
-}
-
 export default function LocalisationPage() {
   return (
     <>
@@ -116,8 +93,15 @@ export default function LocalisationPage() {
               <p key={i} className="text-gray-700 leading-relaxed">{paragraph}</p>
             ))}
           </div>
-          <div className="mt-10">
-            <CTABlock />
+          <div className="mt-10 flex justify-center">
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto rounded-xl bg-[#003580] px-10 py-4 text-center text-base font-semibold text-white shadow-md hover:bg-[#00254d] transition-colors"
+            >
+              Voir les disponibilités sur Booking.com
+            </a>
           </div>
         </div>
       </section>
@@ -154,8 +138,15 @@ export default function LocalisationPage() {
             ))}
           </div>
 
-          <div className="mt-14">
-            <CTABlock />
+          <div className="mt-14 flex justify-center">
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto rounded-xl bg-[#003580] px-10 py-4 text-center text-base font-semibold text-white shadow-md hover:bg-[#00254d] transition-colors"
+            >
+              Réserver sur Booking.com
+            </a>
           </div>
         </div>
       </section>
@@ -182,22 +173,14 @@ export default function LocalisationPage() {
           <p className="mt-4 text-lg text-gray-200">
             Montagne, rivières, patrimoine — tout est à portée de main depuis votre terrasse.
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href={AIRBNB_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto rounded-xl bg-white px-8 py-4 text-base font-semibold text-[#FF5A5F] hover:bg-gray-100 transition-colors"
-            >
-              Réserver sur Airbnb
-            </a>
+          <div className="mt-8 flex justify-center">
             <a
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto rounded-xl bg-white/20 border border-white px-8 py-4 text-base font-semibold text-white hover:bg-white/30 transition-colors"
+              className="w-full sm:w-auto rounded-xl bg-white px-10 py-4 text-center text-base font-semibold text-[#003580] hover:bg-gray-100 transition-colors"
             >
-              Voir les disponibilités
+              Voir les disponibilités sur Booking.com
             </a>
           </div>
         </div>
