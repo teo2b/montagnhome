@@ -38,7 +38,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
             src={images[0]?.src || ""}
             alt={images[0]?.alt || ""}
             fill
-            className="object-cover hover:scale-105 transition-transform duration-300"
+            className="object-cover transition-transform duration-300"
             sizes="(max-width: 768px) 100vw, 50vw"
             priority
           />
@@ -54,7 +54,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
               src={img.src}
               alt={img.alt}
               fill
-              className="object-cover hover:scale-105 transition-transform duration-300"
+              className="object-cover transition-transform duration-300"
               sizes="25vw"
             />
           </button>

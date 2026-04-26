@@ -25,7 +25,7 @@ export default function ContactPage() {
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-gray-900">
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900">
               Une question ? Contactez-nous
             </h1>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">

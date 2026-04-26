@@ -12,7 +12,7 @@ export default function Hero() {
       />
 
       <div className="relative z-20 mx-auto max-w-4xl px-4 text-center">
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
           Location mobil-home à&nbsp;Corte en&nbsp;Corse
           <span className="block mt-2 text-brand-sand">Calme, nature et vue&nbsp;montagne</span>
         </h1>

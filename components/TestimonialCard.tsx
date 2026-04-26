@@ -29,7 +29,7 @@ export default function TestimonialsSection() {
             <span className="text-sm font-bold text-gray-900">{RATING.value}/5</span>
             <span className="text-sm text-gray-600">· Déjà réservé plus de {RATING.reviewCount} fois</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
             Ils ont séjourné chez nous
           </h2>
         </div>

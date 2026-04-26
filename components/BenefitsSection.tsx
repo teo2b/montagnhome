@@ -28,7 +28,7 @@ export default function BenefitsSection() {
   return (
     <section className="py-20 bg-brand-beige">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="font-serif text-3xl sm:text-4xl font-bold text-center text-gray-900">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900">
           Pourquoi choisir Muntagn&apos;home ?
         </h2>
         <p className="mt-4 text-center text-gray-600 max-w-2xl mx-auto">
@@ -44,7 +44,7 @@ export default function BenefitsSection() {
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-beige text-brand-green">
                 {iconMap[benefit.icon]}
               </div>
-              <h3 className="mt-5 font-serif text-xl font-bold text-gray-900">
+              <h3 className="mt-5 text-xl font-bold text-gray-900">
                 {benefit.title}
               </h3>
               <p className="mt-3 text-sm text-gray-600 leading-relaxed">

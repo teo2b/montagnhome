@@ -16,7 +16,7 @@ export default function ContactForm() {
         <svg className="mx-auto h-12 w-12 text-green-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
-        <h3 className="mt-4 font-serif text-xl font-bold text-gray-900">
+        <h3 className="mt-4 text-xl font-bold text-gray-900">
           Message envoyé !
         </h3>
         <p className="mt-2 text-gray-600">

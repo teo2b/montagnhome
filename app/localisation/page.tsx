@@ -73,7 +73,7 @@ export default function LocalisationPage() {
           priority
         />
         <div className="relative z-20 text-center px-4">
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white">
             Corte et la Corse : nature, culture et aventure
           </h1>
           <p className="mt-4 text-lg text-gray-200 max-w-2xl mx-auto">
@@ -85,7 +85,7 @@ export default function LocalisationPage() {
       {/* Description */}
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-3xl font-bold text-gray-900 mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">
             Pourquoi Corte ? La Corse authentique, loin des foules
           </h2>
           <div className="prose prose-lg prose-gray max-w-none">
@@ -109,7 +109,7 @@ export default function LocalisationPage() {
       {/* Activités */}
       <section className="py-20 bg-brand-beige">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-center text-gray-900">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900">
             Ce qui vous attend autour de nos mobil-homes
           </h2>
           <p className="mt-4 text-center text-gray-600 max-w-2xl mx-auto">
@@ -125,7 +125,7 @@ export default function LocalisationPage() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-beige text-brand-green">
                   {activityIcons[activity.icon] || activityIcons.hiking}
                 </div>
-                <h3 className="mt-5 font-serif text-xl font-bold text-gray-900">
+                <h3 className="mt-5 text-xl font-bold text-gray-900">
                   {activity.title}
                 </h3>
                 <p className="mt-3 text-sm text-gray-600 leading-relaxed">
@@ -154,7 +154,7 @@ export default function LocalisationPage() {
       {/* Google Maps */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-3xl font-bold text-center text-gray-900 mb-10">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-10">
             Où se trouvent nos mobil-homes
           </h2>
           <MapEmbed src={locationContent.mapEmbedUrl} />
@@ -167,7 +167,7 @@ export default function LocalisationPage() {
       {/* CTA finale */}
       <section className="py-16 bg-brand-green text-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-serif text-3xl font-bold">
+          <h2 className="text-3xl font-bold">
             Vivez la Corse autrement
           </h2>
           <p className="mt-4 text-lg text-gray-200">

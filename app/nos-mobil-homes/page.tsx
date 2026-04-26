@@ -67,7 +67,7 @@ export default function NosMobilHomesPage() {
                   {mobilHomeInfo.surface} m²
                 </span>
               </div>
-              <h1 className="font-serif text-3xl sm:text-4xl font-bold text-gray-900">
+              <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
                 Location Mobil-Home à Corte — Vue Montagne, Tout Confort
               </h1>
               <p className="mt-2 text-gray-500">
@@ -100,7 +100,7 @@ export default function NosMobilHomesPage() {
             </div>
 
             <div>
-              <h2 className="font-serif text-2xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Un mobil-home tout confort au cœur de la montagne corse
               </h2>
               <div className="prose prose-gray max-w-none space-y-4">
@@ -125,14 +125,14 @@ export default function NosMobilHomesPage() {
             <CTAButton />
 
             <div>
-              <h2 className="font-serif text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 Équipements et services
               </h2>
               <AmenityList amenities={amenities} />
             </div>
 
             <div>
-              <h2 className="font-serif text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 Tarifs
               </h2>
               <div className="rounded-2xl border border-gray-200 overflow-hidden">
@@ -161,7 +161,7 @@ export default function NosMobilHomesPage() {
             <CTAButton />
 
             <div>
-              <h2 className="font-serif text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 Informations pratiques
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -185,7 +185,7 @@ export default function NosMobilHomesPage() {
             </div>
 
             <div>
-              <h2 className="font-serif text-2xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Localisation
               </h2>
               <p className="text-gray-700 leading-relaxed">

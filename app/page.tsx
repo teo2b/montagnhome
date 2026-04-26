@@ -30,7 +30,7 @@ export default function HomePage() {
       {/* Nos mobil homes */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-center text-gray-900">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900">
             Votre mobil-home à Corte, au cœur de la Corse
           </h2>
           <p className="mt-4 text-center text-lg text-gray-600 max-w-2xl mx-auto">
@@ -45,7 +45,7 @@ export default function HomePage() {
                     src={images[0].src}
                     alt={images[0].alt}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, 50vw"
                     priority
                   />
@@ -60,7 +60,7 @@ export default function HomePage() {
                     <span className="text-gray-500">· Déjà réservé plus de {RATING.reviewCount} fois</span>
                   </div>
 
-                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-gray-900">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
                     2 mobil-homes · {mobilHomeInfo.surface} m² · Vue montagne
                   </h3>
                   <p className="mt-2 text-gray-500">
@@ -121,7 +121,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gray-900">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
                 Corte : la Corse authentique, loin des foules
               </h2>
               <p className="mt-6 text-gray-700 leading-relaxed text-lg">

@@ -36,7 +36,7 @@ export default function HostContactBubble() {
                 />
               </div>
               <div className="min-w-0">
-                <p className="font-serif text-lg font-semibold leading-tight text-gray-900">
+                <p className="text-lg font-semibold leading-tight text-gray-900">
                   Bonjour, c'est {HOST_FIRST_NAME} 👋
                 </p>
                 <p className="mt-0.5 text-sm text-gray-600">
