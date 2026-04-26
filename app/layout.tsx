@@ -64,9 +64,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`${inter.variable}`}>
-      <body className="font-sans">
+      <body className="font-sans flex flex-col min-h-[100dvh]">
         <Header />
-        <main>{children}</main>
+        <main className="flex-grow flex flex-col">{children}</main>
         <Footer />
         <StickyMobileCTA />
         <HostContactBubble />
