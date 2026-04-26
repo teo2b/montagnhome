@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import HostContactBubble from "@/components/HostContactBubble";
 import { SITE_NAME, SITE_URL } from "@/lib/data";
 import "./globals.css";
 
@@ -74,6 +75,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <StickyMobileCTA />
+        <HostContactBubble />
       </body>
     </html>
   );

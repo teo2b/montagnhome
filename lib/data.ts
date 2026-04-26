@@ -5,6 +5,11 @@ export const WHATSAPP_NUMBER = "+33600000000";
 export const BOOKING_URL =
   "https://www.booking.com/hotel/fr/mobile-home-corte.fr.html";
 
+export const HOST_FIRST_NAME = "Anne Marie";
+export const HOST_PHONE_DISPLAY = "06 18 60 11 84";
+export const HOST_PHONE_E164 = "+33618601184";
+export const HOST_PHOTO_SRC = "/images/anne-marie-locatrice.png";
+
 export const ADDRESS = {
   street: "Route Territoriale 50, lot Purette N°29",
   altStreet: "865 route d'Aléria",
