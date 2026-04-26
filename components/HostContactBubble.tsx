@@ -37,10 +37,10 @@ export default function HostContactBubble() {
               </div>
               <div className="min-w-0">
                 <p className="font-serif text-lg font-semibold leading-tight text-gray-900">
-                  {HOST_FIRST_NAME}
+                  Bonjour, c'est {HOST_FIRST_NAME} 👋
                 </p>
                 <p className="mt-0.5 text-sm text-gray-600">
-                  Votre hôte se fera un plaisir de vous répondre.
+                  Je me ferai un plaisir de répondre à vos questions.
                 </p>
               </div>
             </div>
@@ -68,14 +68,14 @@ export default function HostContactBubble() {
                   d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.608-1.288.608-.047 0-.094 0-.141-.003l-2.725-.189A18.003 18.003 0 012.25 6.75z"
                 />
               </svg>
-              Appeler {HOST_PHONE_DISPLAY}
+              M'appeler au {HOST_PHONE_DISPLAY}
             </a>
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
               className="flex w-full items-center justify-center rounded-xl border border-brand-green/30 bg-brand-beige/60 px-4 py-3 text-center text-sm font-semibold text-brand-green-dark transition-colors hover:bg-brand-beige focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/30 focus-visible:ring-offset-2"
             >
-              Page contact
+              M'envoyer un message
             </Link>
           </div>
         </div>
@@ -98,7 +98,7 @@ export default function HostContactBubble() {
               sizes="40px"
             />
           </span>
-          Une question ?
+          Une question ? Je vous écoute
         </button>
       )}
     </div>
