@@ -81,32 +81,32 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
-    name: "Marie",
-    city: "Lyon",
+    name: "Deyanovitch",
+    city: "France",
     rating: 5,
     date: "Août 2025",
-    text: "Coup de cœur total. La terrasse avec vue sur les montagnes, c'est juste magique au coucher du soleil. Mobil home impeccable, super bien équipé. Les gorges de la Restonica à 15 min, on y est allé tous les jours. On revient l'été prochain, c'est sûr !",
+    text: "merci Anne Marie pour votre accueille ,endroit calme bien entretenue avec jardin rencontre agréables tout les jours avec les poules , tortues et Mr le chat .Merci a votre papa pour les légumes de votre jardin. Les commerces ne sont vraiment pas loin. J'espère a l'année prochaine.",
   },
   {
-    name: "Thomas",
-    city: "Paris",
+    name: "Fabien",
+    city: "France",
     rating: 5,
-    date: "Juillet 2025",
-    text: "On cherchait le calme, on a trouvé le paradis. Loin des stations balnéaires bondées, ici c'est la vraie Corse. Le mobil home est nickel, la terrasse incroyable. Corte est une ville magnifique et les randonnées autour sont exceptionnelles.",
+    date: "Août 2025",
+    text: "2 Mobil'homes avec tout le nécessaire à côté d'un beau jardin sur le terrain de notre hôte. Anne Marie et son père sont de bons conseils pour visiter les montagnes environnantes et Anne Marie a été très arrangeante. Nous reviendrons avec grand plaisir !",
   },
   {
-    name: "Sophie & Marc",
-    city: "Marseille",
+    name: "Nada",
+    city: "France",
     rating: 5,
     date: "Juin 2025",
-    text: "3ème séjour et toujours aussi bien. L'emplacement est parfait : restonica, tavignano, citadelle, tout est accessible. Rapport qualité-prix imbattable pour la Corse. On recommande les yeux fermés.",
+    text: "Le Mobil’home est très propre, la terrasse est grande avec une belle vue sur la montagne. Dans l’appartement il y a tous ce qu’il faut pour cuisiner et l’espace est vraiment agréable. L’appartement est climatisé autant qu’il peut être chauffé. Je suis venue seule pour affaire mais je reviendrais certainement avec des amis pour passer du bon temps. C’est à 10 min à pied de la gare de Corte donc vraiment accessible même si vous n’êtes pas véhiculé . Anne-Marie est agréable et disponible. Encore Merci pour m’avoir déposée à la gare . Je recommande vivement les photos ne sont pas à la hauteur du logement. il est vraiment très cosy 😊",
   },
   {
-    name: "Laurent",
-    city: "Toulouse",
+    name: "Fischer",
+    city: "France",
     rating: 5,
     date: "Septembre 2025",
-    text: "Séjour en septembre, hors saison, un vrai bonheur. Calme absolu, températures parfaites, sentiers de rando déserts. Le mobil home est très propre et bien pensé. La vue depuis la terrasse vaut à elle seule le déplacement.",
+    text: "Le logement est un bungalow, équipé comme tel c'est à dire avec toutes les commodités y compris une banquette bien appréciable. Anne-Marie nous a accueillis et montré l'endroit, calme et en retrait par rapport à la route. Le prix est tout à fait correct pour une nuit sur Corte.",
   },
 ];
 
