@@ -35,11 +35,11 @@ export const mobilHomeInfo = {
 };
 
 export const images = [
-  { src: "/images/mobil-home-1.svg", alt: "Mobil home avec terrasse vue montagne à Corte, Corse — location vacances" },
-  { src: "/images/mobil-home-2.svg", alt: "Salon lumineux et cuisine équipée du mobil home à Corte, Corse" },
-  { src: "/images/mobil-home-3.svg", alt: "Chambre double confortable du mobil home location Corte Corse" },
-  { src: "/images/mobil-home-4.svg", alt: "Terrasse privée avec vue sur les montagnes corses au coucher du soleil" },
-  { src: "/images/mobil-home-5.svg", alt: "Jardin privatif et barbecue du mobil home Muntagn'home à Corte" },
+  { src: "/images/exterieur.jpg", alt: "Vue extérieure des deux mobil-homes avec terrasse et jardin à Corte, Corse" },
+  { src: "/images/chambre.jpg", alt: "Chambre double confortable avec grand lit du mobil-home" },
+  { src: "/images/salle-de-bain.jpg", alt: "Salle de bain moderne et fonctionnelle du bungalow" },
+  { src: "/images/terrasse.jpg", alt: "Terrasse privative en bois couverte avec table de jardin" },
+  { src: "/images/exterieur-2.jpg", alt: "Mobil-home Muntagn'home avec grand jardin ensoleillé à Corte" },
 ];
 
 export const amenities = [
