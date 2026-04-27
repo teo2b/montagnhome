@@ -2,7 +2,7 @@ import { BOOKING_URL } from "@/lib/data";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="snap-step relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 z-10" />
       <div
         className="absolute inset-0 bg-cover bg-center"

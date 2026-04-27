@@ -18,4 +18,20 @@
   body {
     @apply antialiased text-gray-800 bg-white;
   }
+
+  body.home-snap {
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    body.home-snap {
+      scroll-snap-type: y mandatory;
+    }
+  }
+
+  body.home-snap .snap-step {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
 }

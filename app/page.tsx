@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import BenefitsSection from "@/components/BenefitsSection";
 import TestimonialsSection from "@/components/TestimonialCard";
 import JsonLd from "@/components/JsonLd";
+import HomeSnapClass from "@/components/HomeSnapClass";
 import { images, mobilHomeInfo, RATING, BOOKING_URL, seoHomeText } from "@/lib/data";
 
 function CTABlock() {
@@ -25,11 +26,12 @@ export default function HomePage() {
   return (
     <>
       <JsonLd />
+      <HomeSnapClass />
       <Hero />
 
-      {/* Nos mobil homes */}
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Étape 2 — Nos mobil-homes */}
+      <section className="snap-step min-h-screen py-20 flex flex-col justify-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
           <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900">
             Votre mobil-home à Corte, au cœur de la Corse
           </h2>
@@ -100,25 +102,29 @@ export default function HomePage() {
         </div>
       </section>
 
-      <BenefitsSection />
-
-      <div className="bg-white py-4">
-        <div className="mx-auto max-w-7xl px-4">
-          <CTABlock />
+      {/* Étape 3 — Avantages + CTA fusionné */}
+      <div className="snap-step min-h-screen bg-brand-beige flex flex-col justify-center">
+        <BenefitsSection />
+        <div className="py-4">
+          <div className="mx-auto max-w-7xl px-4">
+            <CTABlock />
+          </div>
         </div>
       </div>
 
-      <TestimonialsSection />
-
-      <div className="bg-white py-4">
-        <div className="mx-auto max-w-7xl px-4">
-          <CTABlock />
+      {/* Étape 4 — Témoignages + CTA fusionné */}
+      <div className="snap-step min-h-screen bg-gray-50 flex flex-col justify-center">
+        <TestimonialsSection />
+        <div className="py-4">
+          <div className="mx-auto max-w-7xl px-4">
+            <CTABlock />
+          </div>
         </div>
       </div>
 
-      {/* Aperçu localisation */}
-      <section className="py-20 bg-brand-beige">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Étape 5 — Aperçu localisation */}
+      <section className="snap-step min-h-screen py-20 bg-brand-beige flex flex-col justify-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
@@ -150,9 +156,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bandeau réassurance + CTA */}
-      <section className="py-16 bg-brand-green text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Étape 6 — Bandeau réassurance + CTA */}
+      <section className="snap-step min-h-screen py-16 bg-brand-green text-white flex flex-col justify-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center mb-10">
             <div>
               <p className="text-3xl font-bold">{RATING.value}/5</p>
@@ -184,7 +190,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SEO text block */}
+      {/* SEO text block — pas de snap, scroll libre */}
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="prose prose-gray max-w-none">

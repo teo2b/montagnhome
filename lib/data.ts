@@ -1,6 +1,6 @@
 export const SITE_URL = "https://www.muntagnhome.fr";
 export const SITE_NAME = "Muntagn'home";
-export const CONTACT_EMAIL = "contact@muntagnhome.fr";
+export const CONTACT_EMAIL = "muntagnhome@gmail.com";
 export const WHATSAPP_NUMBER = "+33600000000";
 export const BOOKING_URL =
   "https://www.booking.com/hotel/fr/mobile-home-corte.fr.html";
