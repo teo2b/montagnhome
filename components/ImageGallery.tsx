@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface GalleryImage {
   src: string;
@@ -15,6 +15,8 @@ interface ImageGalleryProps {
 export default function ImageGallery({ images }: ImageGalleryProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const lastTriggerRef = useRef<HTMLButtonElement | null>(null);
 
   const openLightbox = (index: number) => {
     setCurrentIndex(index);
@@ -26,11 +28,61 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
   const prev = () => setCurrentIndex((i) => (i === 0 ? images.length - 1 : i - 1));
   const next = () => setCurrentIndex((i) => (i === images.length - 1 ? 0 : i + 1));
 
+  useEffect(() => {
+    if (!lightboxOpen) {
+      return;
+    }
+
+    const dialog = dialogRef.current;
+    const focusable = dialog?.querySelectorAll<HTMLElement>(
+      'button:not([disabled]), [href], [tabindex]:not([tabindex="-1"])',
+    );
+    focusable?.[0]?.focus();
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setLightboxOpen(false);
+        return;
+      }
+      if (event.key === "ArrowLeft") {
+        prev();
+        return;
+      }
+      if (event.key === "ArrowRight") {
+        next();
+        return;
+      }
+      if (event.key === "Tab" && focusable && focusable.length > 1) {
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [lightboxOpen]);
+
+  useEffect(() => {
+    if (!lightboxOpen && lastTriggerRef.current) {
+      lastTriggerRef.current.focus();
+    }
+  }, [lightboxOpen]);
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-2 md:gap-3 rounded-2xl overflow-hidden">
         <button
-          onClick={() => openLightbox(0)}
+          onClick={(event) => {
+            lastTriggerRef.current = event.currentTarget;
+            openLightbox(0);
+          }}
           className="md:col-span-2 md:row-span-2 relative aspect-[4/3] md:aspect-auto cursor-pointer"
           aria-label={`Voir ${images[0]?.alt}`}
         >
@@ -46,7 +98,10 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
         {images.slice(1, 5).map((img, i) => (
           <button
             key={i}
-            onClick={() => openLightbox(i + 1)}
+            onClick={(event) => {
+              lastTriggerRef.current = event.currentTarget;
+              openLightbox(i + 1);
+            }}
             className="relative aspect-[4/3] hidden md:block cursor-pointer"
             aria-label={`Voir ${img.alt}`}
           >
@@ -63,6 +118,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
 
       {lightboxOpen && (
         <div
+          ref={dialogRef}
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
           onClick={closeLightbox}
           role="dialog"

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 import JsonLd from "@/components/JsonLd";
-import { CONTACT_EMAIL, WHATSAPP_NUMBER, SITE_URL, SITE_NAME, BOOKING_URL } from "@/lib/data";
+import BookingCTA from "@/components/BookingCTA";
+import { CONTACT_EMAIL, WHATSAPP_NUMBER, SITE_URL, SITE_NAME } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: `Contactez-nous — Location Mobil-Home Corte, Corse`,
@@ -20,7 +22,22 @@ export default function ContactPage() {
 
   return (
     <>
-      <JsonLd />
+      <JsonLd
+        additionalData={[
+          {
+            "@type": "WebPage",
+            name: "Contact Muntagn'home",
+            url: `${SITE_URL}/contact`,
+          },
+          {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Accueil", item: SITE_URL },
+              { "@type": "ListItem", position: 2, name: "Contact", item: `${SITE_URL}/contact` },
+            ],
+          },
+        ]}
+      />
 
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -78,15 +95,8 @@ export default function ContactPage() {
               </a>
 
               <div className="rounded-2xl bg-brand-beige p-6">
-                <h3 className="font-semibold text-gray-900 mb-3">Vous préférez réserver directement ?</h3>
-                <a
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full rounded-xl bg-[#003580] px-5 py-3 text-center text-sm font-semibold text-white hover:bg-[#00254d] transition-colors"
-                >
-                  Réserver sur Booking.com
-                </a>
+                <h3 className="font-semibold text-gray-900 mb-3">Vous preferez reserver directement ?</h3>
+                <BookingCTA fullWidth />
               </div>
 
               <div className="rounded-2xl border border-gray-200 p-6">
@@ -101,6 +111,18 @@ export default function ContactPage() {
                     <p className="text-sm font-semibold text-gray-900">Adresse</p>
                     <p className="text-sm text-gray-500">Corte, Haute-Corse, France</p>
                   </div>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-gray-200 p-6">
+                <p className="text-sm font-semibold text-gray-900">Liens utiles</p>
+                <div className="mt-4 space-y-3">
+                  <Link href="/nos-mobil-homes" className="block text-sm text-brand-green hover:text-brand-green-light transition-colors">
+                    Voir les equipements et tarifs
+                  </Link>
+                  <Link href="/localisation" className="block text-sm text-brand-green hover:text-brand-green-light transition-colors">
+                    Explorer Corte et les activites
+                  </Link>
                 </div>
               </div>
             </aside>

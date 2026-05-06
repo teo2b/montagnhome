@@ -4,15 +4,28 @@ import { useState } from "react";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const form = e.currentTarget as HTMLFormElement;
+    const formData = new FormData(form);
+    const message = String(formData.get("message") || "").trim();
+    const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+
+    if (!name || !email || message.length < 10) {
+      setError("Merci de completer les champs obligatoires et de preciser votre message (10 caracteres minimum).");
+      return;
+    }
+
+    setError(null);
     setSubmitted(true);
   };
 
   if (submitted) {
     return (
-      <div className="rounded-2xl bg-green-50 border border-green-200 p-8 text-center">
+      <div className="rounded-2xl bg-green-50 border border-green-200 p-8 text-center" aria-live="polite">
         <svg className="mx-auto h-12 w-12 text-green-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
@@ -28,6 +41,14 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      <p className="sr-only" aria-live="polite">
+        {error || "Formulaire pret a etre envoye"}
+      </p>
+      {error && (
+        <div className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-700" role="alert">
+          {error}
+        </div>
+      )}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">

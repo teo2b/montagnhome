@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
 import MapEmbed from "@/components/MapEmbed";
 import JsonLd from "@/components/JsonLd";
-import { locationContent, activities, SITE_URL, BOOKING_URL } from "@/lib/data";
+import BookingCTA from "@/components/BookingCTA";
+import { locationContent, activities, SITE_URL } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: locationContent.seoTitle,
@@ -60,7 +62,22 @@ const activityIcons: Record<string, React.ReactNode> = {
 export default function LocalisationPage() {
   return (
     <>
-      <JsonLd />
+      <JsonLd
+        additionalData={[
+          {
+            "@type": "WebPage",
+            name: "Localisation et activites a Corte",
+            url: `${SITE_URL}/localisation`,
+          },
+          {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Accueil", item: SITE_URL },
+              { "@type": "ListItem", position: 2, name: "Localisation", item: `${SITE_URL}/localisation` },
+            ],
+          },
+        ]}
+      />
 
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
@@ -94,14 +111,7 @@ export default function LocalisationPage() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto rounded-xl bg-[#003580] px-10 py-4 text-center text-base font-semibold text-white shadow-md hover:bg-[#00254d] transition-colors"
-            >
-              Voir les disponibilités sur Booking.com
-            </a>
+            <BookingCTA size="lg" />
           </div>
         </div>
       </section>
@@ -139,14 +149,7 @@ export default function LocalisationPage() {
           </div>
 
           <div className="mt-14 flex justify-center">
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto rounded-xl bg-[#003580] px-10 py-4 text-center text-base font-semibold text-white shadow-md hover:bg-[#00254d] transition-colors"
-            >
-              Réserver sur Booking.com
-            </a>
+            <BookingCTA size="lg" />
           </div>
         </div>
       </section>
@@ -161,6 +164,14 @@ export default function LocalisationPage() {
           <p className="mt-6 text-center text-gray-600">
             Corte, Haute-Corse — Au centre géographique de l&apos;île, accessible depuis Bastia (1h15) et Ajaccio (1h15).
           </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <Link href="/nos-mobil-homes" className="inline-flex rounded-xl border border-gray-300 px-5 py-3 text-sm font-semibold text-gray-700 hover:border-brand-green hover:text-brand-green transition-colors">
+              Voir les equipements
+            </Link>
+            <Link href="/contact" className="inline-flex rounded-xl border border-gray-300 px-5 py-3 text-sm font-semibold text-gray-700 hover:border-brand-green hover:text-brand-green transition-colors">
+              Poser une question
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -174,14 +185,7 @@ export default function LocalisationPage() {
             Montagne, rivières, patrimoine — tout est à portée de main depuis votre terrasse.
           </p>
           <div className="mt-8 flex justify-center">
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto rounded-xl bg-white px-10 py-4 text-center text-base font-semibold text-[#003580] hover:bg-gray-100 transition-colors"
-            >
-              Voir les disponibilités sur Booking.com
-            </a>
+            <BookingCTA variant="light" size="lg" />
           </div>
         </div>
       </section>

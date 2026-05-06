@@ -3,10 +3,10 @@ import Link from "next/link";
 import ImageGallery from "@/components/ImageGallery";
 import AmenityList from "@/components/AmenityList";
 import JsonLd from "@/components/JsonLd";
+import BookingCTA from "@/components/BookingCTA";
 import {
   SITE_URL,
   SITE_NAME,
-  BOOKING_URL,
   images,
   amenities,
   pricing,
@@ -16,7 +16,7 @@ import {
 } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: `Location Mobil-Home Corte, Corse — Vue Montagne, Tout Confort | ${SITE_NAME}`,
+  title: `Nos mobil-homes a Corte: equipements, tarifs et disponibilites | ${SITE_NAME}`,
   description:
     "Louez un mobil-home tout confort à Corte en Corse : 30m², 2 chambres, terrasse vue montagne, clim, barbecue. Dès 70€/nuit. Réservez sur Booking.com.",
   openGraph: {
@@ -29,23 +29,25 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/nos-mobil-homes` },
 };
 
-function CTAButton() {
-  return (
-    <a
-      href={BOOKING_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block w-full rounded-xl bg-[#003580] px-6 py-3.5 text-center text-sm font-semibold text-white shadow-md hover:bg-[#00254d] transition-colors"
-    >
-      Réserver sur Booking.com
-    </a>
-  );
-}
-
 export default function NosMobilHomesPage() {
   return (
     <>
-      <JsonLd />
+      <JsonLd
+        additionalData={[
+          {
+            "@type": "WebPage",
+            name: "Nos mobil-homes a Corte",
+            url: `${SITE_URL}/nos-mobil-homes`,
+          },
+          {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Accueil", item: SITE_URL },
+              { "@type": "ListItem", position: 2, name: "Nos mobil-homes", item: `${SITE_URL}/nos-mobil-homes` },
+            ],
+          },
+        ]}
+      />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
         <ImageGallery images={images} />
@@ -68,7 +70,7 @@ export default function NosMobilHomesPage() {
                 </span>
               </div>
               <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
-                Location Mobil-Home à Corte — Vue Montagne, Tout Confort
+                Nos mobil-homes a Corte: tout le confort pour un sejour nature
               </h1>
               <p className="mt-2 text-gray-500">
                 {ADDRESS.street}, {ADDRESS.postalCode} {ADDRESS.city}
@@ -85,18 +87,8 @@ export default function NosMobilHomesPage() {
               </div>
             </div>
 
-            {/* Emotional projection */}
-            <div className="rounded-2xl bg-brand-beige p-6 sm:p-8">
-              <p className="text-lg text-gray-800 leading-relaxed italic">
-                Imaginez vos soirées d&apos;été sur la terrasse, un verre à la main, avec vue sur les montagnes corses baignées par la lumière dorée du couchant. Le chant des oiseaux, l&apos;odeur du maquis, le calme absolu…
-              </p>
-              <p className="mt-4 text-gray-700 leading-relaxed">
-                C&apos;est exactement ce qui vous attend chez Muntagn&apos;home. Nos deux mobil-homes de 30 m² sont votre refuge au cœur de la Corse : confortables, tout équipés, et surtout — avec cette terrasse face aux montagnes qui change tout.
-              </p>
-            </div>
-
             <div className="sm:hidden">
-              <CTAButton />
+              <BookingCTA fullWidth />
             </div>
 
             <div>
@@ -122,7 +114,7 @@ export default function NosMobilHomesPage() {
               </div>
             </div>
 
-            <CTAButton />
+            <BookingCTA />
 
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
@@ -158,7 +150,7 @@ export default function NosMobilHomesPage() {
               </p>
             </div>
 
-            <CTAButton />
+            <BookingCTA />
 
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
@@ -195,7 +187,7 @@ export default function NosMobilHomesPage() {
                 href="/localisation"
                 className="mt-4 inline-flex text-sm font-semibold text-brand-green hover:text-brand-green-light transition-colors"
               >
-                Voir la carte et les activités →
+                Voir la carte et les activites →
               </Link>
             </div>
           </div>
@@ -218,7 +210,7 @@ export default function NosMobilHomesPage() {
                 </div>
 
                 <div className="mt-6">
-                  <CTAButton />
+                  <BookingCTA fullWidth />
                 </div>
 
                 <div className="mt-6 space-y-3 text-sm text-gray-600">

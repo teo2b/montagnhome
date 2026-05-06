@@ -1,11 +1,11 @@
 import { SITE_NAME, SITE_URL, CONTACT_EMAIL, ADDRESS, RATING } from "@/lib/data";
 
 interface JsonLdProps {
-  additionalData?: Record<string, unknown>;
+  additionalData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 export default function JsonLd({ additionalData }: JsonLdProps) {
-  const baseSchema = {
+  const baseSchema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
     name: SITE_NAME,
@@ -43,13 +43,18 @@ export default function JsonLd({ additionalData }: JsonLdProps) {
       { "@type": "LocationFeatureSpecification", name: "Barbecue", value: true },
       { "@type": "LocationFeatureSpecification", name: "Cuisine équipée", value: true },
     ],
-    ...additionalData,
   };
+
+  const schemaPayload = Array.isArray(additionalData)
+    ? [baseSchema, ...additionalData]
+    : additionalData
+      ? [baseSchema, additionalData]
+      : baseSchema;
 
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(baseSchema) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaPayload) }}
     />
   );
 }

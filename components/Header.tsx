@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { SITE_NAME, BOOKING_URL } from "@/lib/data";
+import { SITE_NAME } from "@/lib/data";
+import BookingCTA from "@/components/BookingCTA";
 
 const navLinks = [
   { href: "/", label: "Accueil" },
@@ -37,14 +38,7 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center">
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg bg-[#003580] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#00254d] transition-colors"
-            >
-              Réserver
-            </a>
+            <BookingCTA size="sm" label="Réserver" className="rounded-lg shadow-none" />
           </div>
 
           <button
@@ -80,15 +74,11 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <BookingCTA
+              fullWidth
               onClick={() => setMobileOpen(false)}
-              className="mt-2 rounded-xl bg-[#003580] px-5 py-3 text-center text-sm font-semibold text-white"
-            >
-              Réserver sur Booking.com
-            </a>
+              label="Voir les disponibilités sur Booking.com"
+            />
           </nav>
         </div>
       )}

@@ -51,6 +51,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    title: `Location mobil-home a Corte, Corse - ${SITE_NAME}`,
+    description:
+      "2 mobil-homes tout confort a Corte, en Corse. Vue montagne, calme, nature et reservation sur Booking.com.",
+    images: ["/images/hero-corse.png"],
   },
   alternates: {
     canonical: SITE_URL,
