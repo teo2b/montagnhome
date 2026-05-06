@@ -3,7 +3,7 @@ import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 import JsonLd from "@/components/JsonLd";
 import BookingCTA from "@/components/BookingCTA";
-import { CONTACT_EMAIL, WHATSAPP_NUMBER, SITE_URL, SITE_NAME } from "@/lib/data";
+import { CONTACT_EMAIL, WHATSAPP_NUMBER, SITE_URL, SITE_NAME, ADDRESS } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: `Contactez-nous — Location Mobil-Home Corte, Corse`,
@@ -39,7 +39,7 @@ export default function ContactPage() {
         ]}
       />
 
-      <section className="py-20">
+      <section className="py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900">
@@ -50,15 +50,15 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 xl:gap-12">
             <div className="lg:col-span-2">
-              <div className="rounded-2xl border border-gray-200 p-8 shadow-sm">
+              <div className="card-surface reveal-on-scroll p-8">
                 <ContactForm />
               </div>
             </div>
 
             <aside className="space-y-6">
-              <div className="rounded-2xl border border-gray-200 p-6">
+              <div className="card-surface p-6">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-beige text-brand-green">
                     <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -81,7 +81,7 @@ export default function ContactPage() {
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 rounded-2xl border border-gray-200 p-6 hover:border-green-400 transition-colors"
+                className="card-surface flex items-center gap-3 p-6 hover:border-green-300"
               >
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600">
                   <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -94,12 +94,12 @@ export default function ContactPage() {
                 </div>
               </a>
 
-              <div className="rounded-2xl bg-brand-beige p-6">
+              <div className="glass-surface p-6">
                 <h3 className="font-semibold text-gray-900 mb-3">Vous preferez reserver directement ?</h3>
                 <BookingCTA fullWidth />
               </div>
 
-              <div className="rounded-2xl border border-gray-200 p-6">
+              <div className="card-surface p-6">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-beige text-brand-green">
                     <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -109,12 +109,12 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-gray-900">Adresse</p>
-                    <p className="text-sm text-gray-500">Corte, Haute-Corse, France</p>
+                    <p className="text-sm text-gray-500">{ADDRESS.street}, {ADDRESS.postalCode} {ADDRESS.city}</p>
                   </div>
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-gray-200 p-6">
+              <div className="card-surface p-6">
                 <p className="text-sm font-semibold text-gray-900">Liens utiles</p>
                 <div className="mt-4 space-y-3">
                   <Link href="/nos-mobil-homes" className="block text-sm text-brand-green hover:text-brand-green-light transition-colors">

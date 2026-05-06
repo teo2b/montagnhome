@@ -16,21 +16,21 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+    <header className="sticky top-0 z-50 border-b border-white/40 bg-white/75 backdrop-blur-xl shadow-[0_10px_30px_-22px_rgba(15,23,42,0.8)]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-brand-green tracking-tight">
+            <span className="text-xl font-bold text-brand-green tracking-tight sm:text-2xl">
               {SITE_NAME}
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8" aria-label="Navigation principale">
+          <nav className="hidden md:flex items-center gap-2 rounded-full border border-gray-200/80 bg-white/70 p-1.5" aria-label="Navigation principale">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-gray-600 hover:text-brand-green transition-colors"
+                className="rounded-full px-4 py-2 text-sm font-medium text-gray-600 transition-all duration-200 hover:bg-brand-beige hover:text-brand-green"
               >
                 {link.label}
               </Link>
@@ -62,14 +62,14 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden border-t border-gray-100 bg-white">
+        <div className="md:hidden border-t border-gray-100/80 bg-white/90 backdrop-blur-xl">
           <nav className="flex flex-col px-4 py-4 space-y-3" aria-label="Menu mobile">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-base font-medium text-gray-700 hover:text-brand-green transition-colors"
+                className="rounded-xl px-3 py-2 text-base font-medium text-gray-700 transition-colors hover:bg-brand-beige hover:text-brand-green"
               >
                 {link.label}
               </Link>

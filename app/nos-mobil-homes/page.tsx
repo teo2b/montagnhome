@@ -49,7 +49,7 @@ export default function NosMobilHomesPage() {
         ]}
       />
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
         <ImageGallery images={images} />
 
         <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -87,7 +87,7 @@ export default function NosMobilHomesPage() {
               </div>
             </div>
 
-            <div className="sm:hidden">
+            <div className="sm:hidden reveal-on-scroll">
               <BookingCTA fullWidth />
             </div>
 
@@ -103,7 +103,7 @@ export default function NosMobilHomesPage() {
                   Mais le vrai plus, c&apos;est l&apos;extérieur : votre terrasse privée face aux montagnes, un jardin clos où les enfants peuvent jouer, et un barbecue pour des soirées conviviales sous les étoiles corses. Le parking gratuit est à deux pas.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  Situé Route Territoriale 50 à Corte, à seulement 20 minutes à pied de la Citadelle historique et à 450 mètres de la gare routière CFC, vous êtes idéalement placé pour explorer la Corse sans voiture — ou avec, pour rejoindre les gorges de la Restonica en 15 minutes et plonger dans les piscines naturelles turquoise de cette vallée classée Grand Site de France.
+                  Situe au 865 route d&apos;Aleria a Corte, a seulement 20 minutes a pied de la Citadelle historique et a 450 metres de la gare routiere CFC, vous etes idealement place pour explorer la Corse sans voiture - ou avec, pour rejoindre les gorges de la Restonica en 15 minutes et plonger dans les piscines naturelles turquoise de cette vallee classee Grand Site de France.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
                   Le Parc Naturel Régional de Corse est à 1 km. Le GR20 passe à proximité. Les lacs de Mélo et Capitello sont accessibles en randonnée. La vallée du Tavignano offre des balades familiales au bord de l&apos;eau. Et pour les journées plage, la côte orientale est à 45 minutes.
@@ -127,7 +127,7 @@ export default function NosMobilHomesPage() {
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 Tarifs
               </h2>
-              <div className="rounded-2xl border border-gray-200 overflow-hidden">
+              <div className="card-surface overflow-hidden">
                 <table className="w-full">
                   <thead>
                     <tr className="bg-gray-50">
@@ -157,19 +157,19 @@ export default function NosMobilHomesPage() {
                 Informations pratiques
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="rounded-xl bg-gray-50 p-5">
+                <div className="card-surface p-5">
                   <p className="text-sm font-semibold text-gray-900">Arrivée</p>
                   <p className="text-sm text-gray-600">{mobilHomeInfo.checkIn}</p>
                 </div>
-                <div className="rounded-xl bg-gray-50 p-5">
+                <div className="card-surface p-5">
                   <p className="text-sm font-semibold text-gray-900">Départ</p>
                   <p className="text-sm text-gray-600">{mobilHomeInfo.checkOut}</p>
                 </div>
-                <div className="rounded-xl bg-gray-50 p-5">
+                <div className="card-surface p-5">
                   <p className="text-sm font-semibold text-gray-900">Caution</p>
                   <p className="text-sm text-gray-600">{mobilHomeInfo.deposit} € en espèces à l&apos;arrivée</p>
                 </div>
-                <div className="rounded-xl bg-gray-50 p-5">
+                <div className="card-surface p-5">
                   <p className="text-sm font-semibold text-gray-900">Paiement</p>
                   <p className="text-sm text-gray-600">Virement, chèque, Chèques-Vacances ANCV</p>
                 </div>
@@ -181,7 +181,7 @@ export default function NosMobilHomesPage() {
                 Localisation
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                Nos mobil-homes se trouvent {ADDRESS.street} ({ADDRESS.altStreet}), {ADDRESS.postalCode} {ADDRESS.city}. À 20 min à pied de la Citadelle, 450 m de la gare CFC, et 15 min en voiture des gorges de la Restonica.
+                Nos mobil-homes se trouvent au {ADDRESS.street}, {ADDRESS.postalCode} {ADDRESS.city}. A 20 min a pied de la Citadelle, 450 m de la gare CFC, et 15 min en voiture des gorges de la Restonica.
               </p>
               <Link
                 href="/localisation"
@@ -195,7 +195,7 @@ export default function NosMobilHomesPage() {
           {/* Sidebar sticky */}
           <aside className="lg:col-span-1">
             <div className="sticky top-24 space-y-6">
-              <div className="rounded-2xl border border-gray-200 p-6 shadow-lg">
+              <div className="card-surface p-6">
                 <p className="text-sm text-gray-500 mb-1">À partir de</p>
                 <p className="text-3xl font-bold text-gray-900">
                   {mobilHomeInfo.priceFrom} €
@@ -249,7 +249,7 @@ export default function NosMobilHomesPage() {
 
               <Link
                 href="/contact"
-                className="block rounded-2xl border border-gray-200 p-6 text-center hover:border-brand-green transition-colors"
+                className="card-surface block p-6 text-center hover:border-brand-green transition-colors"
               >
                 <p className="font-semibold text-gray-900">Une question ?</p>
                 <p className="mt-1 text-sm text-gray-500">Contactez-nous par email ou WhatsApp</p>

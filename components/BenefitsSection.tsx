@@ -26,12 +26,12 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function BenefitsSection() {
   return (
-    <section className="py-20 bg-brand-beige">
+    <section className="py-24 bg-brand-beige/70">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900">
+        <h2 className="section-title text-center">
           Pourquoi choisir Muntagn&apos;home ?
         </h2>
-        <p className="mt-4 text-center text-gray-600 max-w-2xl mx-auto">
+        <p className="section-subtitle mx-auto text-center">
           Des vacances authentiques en Corse, entre montagnes majestueuses et nature préservée.
         </p>
 
@@ -39,9 +39,9 @@ export default function BenefitsSection() {
           {benefits.map((benefit) => (
             <div
               key={benefit.title}
-              className="rounded-2xl bg-white p-8 text-center shadow-md hover:shadow-lg transition-shadow"
+              className="card-surface reveal-on-scroll p-8 text-center"
             >
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-beige text-brand-green">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-beige text-brand-green shadow-inner">
                 {iconMap[benefit.icon]}
               </div>
               <h3 className="mt-5 text-xl font-bold text-gray-900">

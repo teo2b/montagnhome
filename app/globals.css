@@ -16,7 +16,14 @@
   }
 
   body {
-    @apply antialiased text-gray-800 bg-white;
+    @apply antialiased text-gray-800;
+    background:
+      radial-gradient(1200px 500px at 50% -200px, rgba(74, 124, 40, 0.1), transparent 70%),
+      linear-gradient(180deg, #fcfcfb 0%, #ffffff 35%, #fbfcfa 100%);
+  }
+
+  ::selection {
+    background: rgba(74, 124, 40, 0.2);
   }
 
   body.home-snap {
@@ -42,14 +49,47 @@
   }
 
   .section-title {
-    @apply text-3xl font-bold text-gray-900 sm:text-4xl;
+    @apply text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl;
   }
 
   .section-subtitle {
-    @apply mt-4 max-w-2xl text-gray-600;
+    @apply mt-5 max-w-3xl text-base leading-relaxed text-gray-600 sm:text-lg;
   }
 
   .card-surface {
-    @apply rounded-2xl border border-gray-100 bg-white shadow-sm;
+    @apply rounded-3xl border border-gray-100/80 bg-white/90 shadow-[0_12px_40px_-22px_rgba(15,23,42,0.45)] backdrop-blur-sm transition-all duration-300;
+  }
+
+  .card-surface:hover {
+    @apply -translate-y-1 shadow-[0_20px_45px_-20px_rgba(15,23,42,0.5)];
+  }
+
+  .glass-surface {
+    @apply rounded-3xl border border-white/40 bg-white/60 backdrop-blur-xl;
+  }
+
+  .soft-divider {
+    @apply border-t border-gray-200/70;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1;
+  }
+
+  @supports (animation-timeline: view()) {
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(20px) scale(0.985);
+      animation: revealUp linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 30%;
+    }
+  }
+}
+
+@keyframes revealUp {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }

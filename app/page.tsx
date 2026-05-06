@@ -22,7 +22,7 @@ export default function HomePage() {
       <HomeSnapClass />
       <Hero />
 
-      <section className="snap-step min-h-screen py-20 flex flex-col justify-center">
+      <section className="snap-step min-h-screen py-24 flex flex-col justify-center">
         <div className="section-shell">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-wide text-brand-green">Notre promesse</p>
@@ -32,13 +32,13 @@ export default function HomePage() {
             </p>
           </div>
 
-          <article className="card-surface mt-12 overflow-hidden">
+          <article className="card-surface reveal-on-scroll mt-12 overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="relative min-h-[320px] overflow-hidden">
                 <Image src={images[0].src} alt={images[0].alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
               </div>
               <div className="p-8 sm:p-10">
-                <div className="inline-flex items-center gap-2 rounded-full bg-yellow-50 px-4 py-2 text-sm">
+                <div className="inline-flex items-center gap-2 rounded-full border border-yellow-200/70 bg-yellow-50 px-4 py-2 text-sm">
                   <span className="font-bold text-gray-900">{RATING.value}/5</span>
                   <span className="text-gray-600">- Plus de {RATING.reviewCount} sejours</span>
                 </div>
@@ -70,21 +70,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="snap-step min-h-screen flex flex-col justify-center bg-brand-beige">
+      <div className="snap-step min-h-screen flex flex-col justify-center bg-brand-beige/70">
         <BenefitsSection />
         <div className="section-shell pb-10">
           <BookingCTA size="lg" />
         </div>
       </div>
 
-      <div className="snap-step min-h-screen flex flex-col justify-center bg-gray-50">
+      <div className="snap-step min-h-screen flex flex-col justify-center bg-gray-50/80">
         <TestimonialsSection />
         <div className="section-shell pb-10">
           <BookingCTA size="lg" />
         </div>
       </div>
 
-      <section className="snap-step min-h-screen py-20 bg-brand-beige flex flex-col justify-center">
+      <section className="snap-step min-h-screen py-24 bg-brand-beige/70 flex flex-col justify-center">
         <div className="section-shell">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -104,7 +104,7 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+            <div className="card-surface reveal-on-scroll relative aspect-[4/3] overflow-hidden">
               <Image
                 src="/images/corte-citadelle.png"
                 alt="Citadelle de Corte avec vue sur les montagnes — location mobil home Corse"
@@ -117,22 +117,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="snap-step min-h-screen py-16 bg-brand-green text-white flex flex-col justify-center">
+      <section className="snap-step min-h-screen py-20 bg-gradient-to-br from-brand-green to-brand-green-dark text-white flex flex-col justify-center">
         <div className="section-shell">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center mb-10">
-            <div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-10">
+            <div className="glass-surface p-4">
               <p className="text-3xl font-bold">{RATING.value}/5</p>
               <p className="mt-1 text-sm text-gray-200">Note moyenne</p>
             </div>
-            <div>
+            <div className="glass-surface p-4">
               <p className="text-3xl font-bold">{RATING.reviewCount}+</p>
               <p className="mt-1 text-sm text-gray-200">Séjours réalisés</p>
             </div>
-            <div>
+            <div className="glass-surface p-4">
               <p className="text-3xl font-bold">15 min</p>
               <p className="mt-1 text-sm text-gray-200">De la Restonica</p>
             </div>
-            <div>
+            <div className="glass-surface p-4">
               <p className="text-3xl font-bold">{mobilHomeInfo.priceFrom} €</p>
               <p className="mt-1 text-sm text-gray-200">À partir de / nuit</p>
             </div>

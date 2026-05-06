@@ -106,22 +106,6 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="mobilhome" className="block text-sm font-medium text-gray-700 mb-2">
-          Mobil home souhaité
-        </label>
-        <select
-          id="mobilhome"
-          name="mobilhome"
-          className="w-full rounded-xl border border-gray-300 px-4 py-3 text-gray-900 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 focus:outline-none transition-colors"
-        >
-          <option value="">— Choisir —</option>
-          <option value="panorama">Le Panorama (6 pers.)</option>
-          <option value="maquis">Le Maquis (4 pers.)</option>
-          <option value="both">Les deux / indifférent</option>
-        </select>
-      </div>
-
-      <div>
         <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
           Message *
         </label>

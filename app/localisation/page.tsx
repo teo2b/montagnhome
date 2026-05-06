@@ -80,7 +80,7 @@ export default function LocalisationPage() {
       />
 
       {/* Hero */}
-      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[55vh] min-h-[420px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/40 z-10" />
         <Image
           src="/images/corte-panorama.png"
@@ -100,7 +100,7 @@ export default function LocalisationPage() {
       </section>
 
       {/* Description */}
-      <section className="py-20">
+      <section className="py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">
             Pourquoi Corte ? La Corse authentique, loin des foules
@@ -117,7 +117,7 @@ export default function LocalisationPage() {
       </section>
 
       {/* Activités */}
-      <section className="py-20 bg-brand-beige">
+      <section className="py-24 bg-brand-beige/70">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900">
             Ce qui vous attend autour de nos mobil-homes
@@ -130,7 +130,7 @@ export default function LocalisationPage() {
             {activities.map((activity) => (
               <article
                 key={activity.title}
-                className="rounded-2xl bg-white p-8 shadow-md hover:shadow-lg transition-shadow"
+                className="card-surface reveal-on-scroll p-8"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-beige text-brand-green">
                   {activityIcons[activity.icon] || activityIcons.hiking}
@@ -155,7 +155,7 @@ export default function LocalisationPage() {
       </section>
 
       {/* Google Maps */}
-      <section className="py-20">
+      <section className="py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-10">
             Où se trouvent nos mobil-homes
@@ -176,7 +176,7 @@ export default function LocalisationPage() {
       </section>
 
       {/* CTA finale */}
-      <section className="py-16 bg-brand-green text-white">
+      <section className="py-20 bg-gradient-to-br from-brand-green to-brand-green-dark text-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold">
             Vivez la Corse autrement

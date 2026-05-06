@@ -11,7 +11,7 @@ export const HOST_PHONE_E164 = "+33618601184";
 export const HOST_PHOTO_SRC = "/images/anne-marie-locatrice.png";
 
 export const ADDRESS = {
-  street: "Route Territoriale 50, lot Purette N°29",
+  street: "865 route d'Aléria",
   altStreet: "865 route d'Aléria",
   postalCode: "20250",
   city: "Corte",
@@ -210,7 +210,7 @@ En séjournant dans nos mobil homes à Corte, vous bénéficiez d'un emplacement
 
 export const seoHomeText = `Vous cherchez une location de mobil home à Corte, en Corse ? Muntagn'home vous propose deux hébergements tout confort au cœur de la montagne corse, à deux pas des gorges de la Restonica et de la Citadelle historique.
 
-Nos mobil homes de 30 m² sont idéalement situés sur la Route Territoriale 50 à Corte (20250), au centre géographique de l'île de Beauté. Chaque hébergement dispose de 2 chambres, d'une cuisine équipée, d'une terrasse privée avec vue sur les montagnes et d'un jardin avec barbecue. Climatisation, parking gratuit et linge de maison disponible.
+Nos mobil homes de 30 m² sont idéalement situés au 865 route d'Aléria à Corte (20250), au centre géographique de l'île de Beauté. Chaque hébergement dispose de 2 chambres, d'une cuisine équipée, d'une terrasse privée avec vue sur les montagnes et d'un jardin avec barbecue. Climatisation, parking gratuit et linge de maison disponible.
 
 Contrairement aux locations mobil home du littoral corse souvent bondées en été, Corte offre une expérience différente : calme, nature préservée et authenticité. Les piscines naturelles de la Restonica remplacent avantageusement les plages surpeuplées, et les sentiers de randonnée (GR20, vallée du Tavignano) sont accessibles à pied.
 
